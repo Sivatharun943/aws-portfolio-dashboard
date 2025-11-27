@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Containerized Node.js App with Docker & CircleCI | Project Details</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Containerized Node.js App with Docker & CircleCI</h1>
+        <p>Built, containerized, and deployed a Node.js "Hello World" application using Docker, and automated image builds and publishing with CircleCI (CI/CD).</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/docker-circleci-architecture.png" alt="Docker and CircleCI Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates how to package and deploy a simple <strong>Node.js application</strong> using <strong>Docker containers</strong> and automate the build process using <strong>CircleCI</strong>.
+            </p>
+            <ul>
+                <li>Containerized a Node.js application using a Dockerfile.</li>
+                <li>Built and ran Docker images locally to verify functionality.</li>
+                <li>Pushed the Docker image to <strong>Docker Hub</strong> for cloud storage.</li>
+                <li>Configured <strong>CircleCI</strong> to automatically build and publish Docker images upon every GitHub commit.</li>
+            </ul>
+            <p>The goal was to understand the fundamentals of containerization and CI/CD automation using Docker and CircleCI.</p>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The architecture includes the following components:</p>
+            <ul>
+                <li><strong>Developer Machine</strong> – Builds Docker images from the Node.js source code using a Dockerfile.</li>
+                <li><strong>GitHub Repository</strong> – Stores source code and triggers CircleCI pipeline on each commit.</li>
+                <li><strong>CircleCI</strong> – Builds the Docker image in the cloud and pushes it to Docker Hub automatically.</li>
+                <li><strong>Docker Hub</strong> – Acts as a container registry for storing and sharing Docker images.</li>
+                <li><strong>Local or Cloud Environment (e.g., EC2)</strong> – Pulls and runs the container image to launch the application.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Understood how Docker containers isolate applications and dependencies.</li>
+                <li>Created and tested a Dockerfile to containerize a Node.js application.</li>
+                <li>Published Docker images to Docker Hub for global accessibility.</li>
+                <li>Configured CircleCI for automated builds and deployments (CI/CD).</li>
+                <li>Learned how CI/CD reduces manual deployment efforts and ensures consistent builds.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section alt-bg">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                In this lab project, a single container was used to host the Node.js application. In real-world production systems:
+            </p>
+            <ul>
+                <li>Applications are often split into multiple containers (frontend, backend, database) for modularity.</li>
+                <li>Container images are deployed and orchestrated using services like <strong>Amazon ECS</strong> or <strong>Kubernetes</strong>.</li>
+                <li>Images are stored in secure registries like <strong>Amazon ECR</strong> instead of public Docker Hub.</li>
+                <li>Environment variables and secrets are managed through CI/CD pipelines or AWS Secrets Manager.</li>
+                <li>Proper tagging and versioning of Docker images help maintain deployment traceability.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">⬅ Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
+

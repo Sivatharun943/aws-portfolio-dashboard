@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Migration with Alembic & AWS RDS | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css"> <!-- Add project-specific styles -->
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Cloud Database Migration with Alembic & AWS RDS</h1>
+        <p>Designed and deployed a PostgreSQL database on AWS RDS, and implemented schema versioning using Python’s Alembic and SQLAlchemy.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/alembic-architecture.png" alt="Alembic AWS Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates how to set up and manage a <strong>PostgreSQL database</strong> on AWS RDS and use Alembic for incremental schema migrations:
+            </p>
+            <ul>
+                <li><strong>Database Setup</strong> – Launched a PostgreSQL database instance on AWS RDS using AWS CLI.</li>
+                <li><strong>Alembic Integration</strong> – Configured Alembic with SQLAlchemy and psycopg2 to connect Python to PostgreSQL.</li>
+                <li><strong>Migrations</strong> – Created and applied migration scripts to add and manage database tables.</li>
+            </ul>
+            <p>The goal was to implement reliable, version-controlled schema changes in a cloud-hosted database.</p>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The architecture includes the following components:</p>
+            <ul>
+                <li><strong>AWS RDS (PostgreSQL)</strong> – Cloud-hosted database instance.</li>
+                <li><strong>SQLAlchemy</strong> – Python ORM for defining schema objects.</li>
+                <li><strong>Alembic</strong> – Migration tool for version-controlling schema changes.</li>
+                <li><strong>psycopg2</strong> – Python driver enabling communication with PostgreSQL.</li>
+                <li><strong>psql Client</strong> – Used to verify and manually inspect tables created in RDS.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Learned how to launch and configure an AWS RDS PostgreSQL database using AWS CLI.</li>
+                <li>Understood how Alembic tracks migrations like Git commits for databases.</li>
+                <li>Created and applied multiple migration scripts (e.g., <code>account</code>, <code>account2</code> tables).</li>
+                <li>Verified migrations using the PostgreSQL <code>psql</code> client.</li>
+                <li>Gained experience in integrating Python tools with cloud databases.</li>
+            </ul>
+        </div>
+
+        <!-- Notes & Best Practices -->
+        <div class="project-section alt-bg">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                While this project focused on demonstrating migrations in a learning environment, in production:
+            </p>
+            <ul>
+                <li>Credentials should be managed securely (e.g., AWS Secrets Manager).</li>
+                <li>Security groups should restrict PostgreSQL access to trusted IPs, not open to the world.</li>
+                <li>Separate environments (dev, staging, prod) should each maintain their own migration history.</li>
+                <li>Monitoring and backups should be enabled for RDS databases to ensure reliability.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">⬅ Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
+

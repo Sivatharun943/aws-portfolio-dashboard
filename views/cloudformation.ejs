@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress with CloudFormation | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>WordPress Deployment using CloudFormation Console</h1>
+        <p>Provisioned a WordPress site on AWS by directly launching a CloudFormation stack with a pre-built template.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/cloudformation-architecture.png" alt="CloudFormation WordPress Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                In this project, I deployed a <strong>WordPress application</strong> using the 
+                <strong>AWS CloudFormation Console</strong>. Instead of using a CI/CD pipeline, the deployment was 
+                initiated manually by uploading or selecting a WordPress CloudFormation template. 
+                This helped me understand how CloudFormation provisions resources directly in AWS.
+            </p>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The deployment included the following components:</p>
+            <ul>
+                <li><strong>CloudFormation Template</strong> – Defined resources such as EC2, Security Groups, and MySQL setup.</li>
+                <li><strong>CloudFormation Console</strong> – Used to create and manage the stack manually.</li>
+                <li><strong>EC2 Instance</strong> – Hosted Apache, PHP, MySQL, and WordPress.</li>
+                <li><strong>Security Group</strong> – Allowed inbound HTTP (80) for users and SSH (22) for admin access.</li>
+                <li><strong>Outputs Tab</strong> – Provided the public WordPress URL after deployment.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Learned how to launch and configure a CloudFormation stack manually.</li>
+                <li>Understood how parameters (DB name, user, instance type, key pair) affect deployment.</li>
+                <li>Observed the automatic orchestration of resources by CloudFormation.</li>
+                <li>Learned to use the <strong>Outputs</strong> tab to quickly find application endpoints.</li>
+                <li>Explored the CloudFormation Designer view for a visual representation of the stack.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section alt-bg">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                While this project was done manually, in real-world environments:
+            </p>
+            <ul>
+                <li>Deployments are automated through CI/CD pipelines (e.g., CodePipeline, Jenkins).</li>
+                <li>Sensitive parameters like database passwords should be stored in <strong>AWS Secrets Manager</strong>.</li>
+                <li>Stacks should use <strong>nested templates</strong> for modularity and reusability.</li>
+                <li>CloudFormation <strong>Change Sets</strong> should be reviewed before applying updates to production stacks.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">⬅ Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
+

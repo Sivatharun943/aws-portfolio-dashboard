@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terraform EC2 Deployment | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>EC2 Provisioning with Terraform</h1>
+        <p>Automated the deployment of an AWS EC2 instance using Terraform, demonstrating Infrastructure as Code (IaC) practices.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/terraform-architecture.png" alt="Terraform EC2 Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates using <strong>Terraform</strong> to provision cloud infrastructure. 
+                A single <code>main.tf</code> configuration file was used to define and deploy an <strong>EC2 instance</strong> in AWS. 
+                By following the Terraform workflow, the deployment process was fully automated and repeatable.
+            </p>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The architecture of this project includes:</p>
+            <ul>
+                <li><strong>Terraform CLI</strong> – Executes commands to interact with AWS.</li>
+                <li><strong>AWS Provider</strong> – Connects Terraform to the AWS API using credentials.</li>
+                <li><strong>main.tf</strong> – Defines the EC2 instance (AMI, instance type, key pair, region).</li>
+                <li><strong>EC2 Instance</strong> – Launched automatically in the AWS account.</li>
+                <li><strong>User</strong> – Connects to the instance via SSH or uses the public IP.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Learned the Terraform workflow: <code>init → validate → plan → apply → destroy</code>.</li>
+                <li>Defined infrastructure using HCL (HashiCorp Configuration Language).</li>
+                <li>Compared Infrastructure as Code with manual AWS Console provisioning.</li>
+                <li>Understood the importance of state files in Terraform for tracking resources.</li>
+                <li>Appreciated how IaC improves repeatability, speed, and collaboration.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section alt-bg">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                For simplicity, this project created a single EC2 instance. In real-world production setups:
+            </p>
+            <ul>
+                <li>Use <strong>variables.tf</strong> to avoid hardcoding credentials or values.</li>
+                <li>Store state files remotely in <strong>S3 with DynamoDB</strong> for team collaboration.</li>
+                <li>Organize configurations using <strong>modules</strong> for reusability.</li>
+                <li>Combine Terraform with CI/CD tools (AWS CodePipeline, Jenkins, GitHub Actions).</li>
+                <li>Never commit AWS access keys to version control; use environment variables or IAM roles.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">⬅ Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
+
