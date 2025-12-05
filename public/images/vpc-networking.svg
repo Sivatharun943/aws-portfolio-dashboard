@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="620" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="620" fill="#f8f9fa"/>
+  <text x="450" y="35" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">VPC Network Design</text>
+  
+  <rect x="30" y="200" width="80" height="60" fill="#34495e" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="70" y="225" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Internet</text>
+  <text x="70" y="245" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Users</text>
+  
+  <rect x="140" y="60" width="730" height="440" fill="#fff3e0" stroke="#FF9900" stroke-width="3" rx="10"/>
+  <text x="505" y="85" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#FF9900">VPC (10.0.0.0/16)</text>
+  
+  <rect x="160" y="110" width="320" height="370" fill="#e3f2fd" stroke="#3498db" stroke-width="2" rx="8"/>
+  <text x="320" y="135" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#3498db">Public Subnet (10.0.0.0/24)</text>
+  
+  <rect x="520" y="110" width="330" height="370" fill="#fce4ec" stroke="#e91e63" stroke-width="2" rx="8"/>
+  <text x="685" y="135" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#e91e63">Private Subnet (10.0.1.0/24)</text>
+  
+  <rect x="180" y="160" width="120" height="70" fill="#9b59b6" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="240" y="190" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Internet</text>
+  <text x="240" y="210" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Gateway</text>
+  
+  <rect x="340" y="160" width="120" height="70" fill="#27ae60" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="190" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">NAT</text>
+  <text x="400" y="210" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Gateway</text>
+  
+  <rect x="180" y="260" width="130" height="80" fill="#3498db" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="245" y="290" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Bastion Host</text>
+  <text x="245" y="308" font-family="Arial" font-size="8" text-anchor="middle" fill="white">EC2 (Public IP)</text>
+  <text x="245" y="325" font-family="Arial" font-size="7" text-anchor="middle" fill="white">SSH Jump Box</text>
+  
+  <rect x="340" y="260" width="120" height="60" fill="#1abc9c" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="400" y="285" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Public Route</text>
+  <text x="400" y="302" font-family="Arial" font-size="7" text-anchor="middle" fill="white">0.0.0.0/0 to IGW</text>
+  
+  <rect x="180" y="370" width="130" height="60" fill="#f39c12" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="245" y="395" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Test Instance</text>
+  <text x="245" y="412" font-family="Arial" font-size="7" text-anchor="middle" fill="white">ICMP Testing</text>
+  
+  <rect x="550" y="160" width="130" height="80" fill="#e91e63" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="615" y="190" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Private EC2</text>
+  <text x="615" y="208" font-family="Arial" font-size="8" text-anchor="middle" fill="white">No Public IP</text>
+  <text x="615" y="225" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Backend Server</text>
+  
+  <rect x="700" y="160" width="120" height="60" fill="#1abc9c" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="760" y="185" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Private Route</text>
+  <text x="760" y="202" font-family="Arial" font-size="7" text-anchor="middle" fill="white">0.0.0.0/0 to NAT</text>
+  
+  <rect x="550" y="270" width="280" height="80" fill="#e74c3c" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="690" y="295" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Custom NACL</text>
+  <text x="690" y="315" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Subnet-Level Firewall</text>
+  <text x="690" y="335" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Tested ICMP Blocking</text>
+  
+  <rect x="550" y="370" width="130" height="60" fill="#95a5a6" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="615" y="395" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Security Group</text>
+  <text x="615" y="412" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Instance Level</text>
+  
+  <rect x="700" y="370" width="130" height="60" fill="#95a5a6" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="765" y="395" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Security Group</text>
+  <text x="765" y="412" font-family="Arial" font-size="7" text-anchor="middle" fill="white">SSH from Bastion</text>
+  
+  <line x1="110" y1="230" x2="175" y2="195" stroke="#9b59b6" stroke-width="2"/>
+  <polygon points="170,190 180,195 170,200" fill="#9b59b6"/>
+  
+  <line x1="300" y1="195" x2="335" y2="195" stroke="#27ae60" stroke-width="2"/>
+  <polygon points="330,190 340,195 330,200" fill="#27ae60"/>
+  
+  <line x1="460" y1="195" x2="545" y2="195" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="540,190 550,195 540,200" fill="#27ae60"/>
+  <text x="502" y="185" font-family="Arial" font-size="7" fill="#27ae60">Outbound</text>
+  
+  <line x1="310" y1="300" x2="545" y2="200" stroke="#3498db" stroke-width="2"/>
+  <polygon points="540,195 550,200 540,205" fill="#3498db"/>
+  <text x="420" y="240" font-family="Arial" font-size="7" fill="#3498db">SSH Tunnel</text>
+  
+  <rect x="30" y="520" width="840" height="80" fill="#ecf0f1" stroke="#bdc3c7" rx="5"/>
+  <text x="450" y="545" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Key Components</text>
+  <text x="50" y="570" font-family="Arial" font-size="9" fill="#2c3e50">IGW: Public internet access</text>
+  <text x="200" y="570" font-family="Arial" font-size="9" fill="#2c3e50">NAT: Private outbound only</text>
+  <text x="380" y="570" font-family="Arial" font-size="9" fill="#2c3e50">Bastion: Secure SSH jump</text>
+  <text x="550" y="570" font-family="Arial" font-size="9" fill="#2c3e50">NACL: Subnet firewall</text>
+  <text x="700" y="570" font-family="Arial" font-size="9" fill="#27ae60" font-weight="bold">Defense in Depth</text>
+</svg>

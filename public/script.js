@@ -31,3 +31,12 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
+
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+  const hero = document.getElementById('hero');
+  if (hero) {
+    const scrollPosition = window.scrollY;
+    hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+  }
+});

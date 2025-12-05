@@ -1,0 +1,77 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">AWS Elastic Beanstalk Architecture</text>
+  
+  <!-- AWS Cloud Border -->
+  <rect x="30" y="70" width="740" height="480" fill="none" stroke="#FF9900" stroke-width="3" stroke-dasharray="10,5" rx="10"/>
+  <text x="50" y="95" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FF9900">AWS Cloud</text>
+  
+  <!-- User -->
+  <circle cx="400" cy="30" r="15" fill="#3498db"/>
+  <text x="400" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50">Users</text>
+  
+  <!-- Elastic Beanstalk Service -->
+  <rect x="250" y="110" width="300" height="80" fill="#FF9900" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="140" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Elastic Beanstalk</text>
+  <text x="400" y="165" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Orchestrates App Deployment</text>
+  <text x="400" y="182" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Manages Infrastructure</text>
+  
+  <!-- EC2 Instances -->
+  <rect x="100" y="280" width="140" height="80" fill="#FF9900" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="170" y="305" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">EC2 Instance</text>
+  <text x="170" y="325" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Tomcat Application</text>
+  <text x="170" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Auto Scaling</text>
+  
+  <rect x="330" y="280" width="140" height="80" fill="#e74c3c" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="305" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Security Group</text>
+  <text x="400" y="325" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">HTTP/SSH Access</text>
+  <text x="400" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Firewall Rules</text>
+  
+  <rect x="560" y="280" width="140" height="80" fill="#9b59b6" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="630" y="305" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">IAM Role</text>
+  <text x="630" y="325" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Beanstalk</text>
+  <text x="630" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Permissions</text>
+  
+  <!-- Load Balancer -->
+  <rect x="100" y="400" width="180" height="70" fill="#3498db" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="190" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Load Balancer</text>
+  <text x="190" y="445" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">(Optional)</text>
+  <text x="190" y="462" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Traffic Distribution</text>
+  
+  <!-- User Access -->
+  <rect x="320" y="400" width="160" height="70" fill="#27ae60" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">User Access</text>
+  <text x="400" y="445" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Public URL</text>
+  <text x="400" y="462" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Beanstalk Provided</text>
+  
+  <!-- CloudWatch -->
+  <rect x="520" y="400" width="180" height="70" fill="#f39c12" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="610" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">CloudWatch</text>
+  <text x="610" y="445" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Monitoring &amp; Logs</text>
+  <text x="610" y="462" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Alarms</text>
+  
+  <!-- Arrows -->
+  <line x1="400" y1="45" x2="400" y2="110" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="190" x2="170" y2="280" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="190" x2="400" y2="280" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="190" x2="630" y2="280" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <line x1="170" y1="360" x2="190" y2="400" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="400" y1="360" x2="400" y2="400" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="630" y1="360" x2="610" y2="400" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2c3e50"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <text x="50" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Automatic scaling and load balancing</text>
+  <text x="50" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Managed platform updates</text>
+  <text x="400" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Health monitoring</text>
+  <text x="400" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Easy deployment</text>
+</svg>

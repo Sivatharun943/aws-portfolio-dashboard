@@ -2,7 +2,7 @@
 :root {
   --primary: #0ea5e9; /* sky blue */
   --secondary: #1e40af; /* rich indigo */
-  --accent: #38bdf8; /* bright cyan-blue */
+  --accent: #06b6d4; /* bright cyan */
   --bg-dark: #0f172a;
   --bg-card: #1e293b;
   --text-light: #e2e8f0;
@@ -54,3 +54,12 @@ section h2 i {
 }
 
 
+
+/* Reduce spacing between About and AWS Projects sections */
+#about {
+  padding-bottom: 2rem; /* Reduced from default 4rem */
+}
+
+#aws {
+  padding-top: 2rem; /* Reduced from default 4rem */
+}

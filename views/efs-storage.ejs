@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon EFS Shared Storage | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Amazon EFS Shared Storage & Performance Testing</h1>
+        <p>Created an Amazon EFS file system, mounted it to EC2 instances, tested performance with FIO benchmarking, and monitored throughput metrics in CloudWatch.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/efs-storage.png" alt="EFS Storage Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates <strong>Amazon Elastic File System (EFS)</strong>, a scalable, fully managed 
+                NFS file system that can be shared across multiple EC2 instances.
+            </p>
+            <ul>
+                <li>Created a <strong>Security Group</strong> allowing NFS traffic (port 2049).</li>
+                <li>Created an <strong>EFS file system</strong> with mount targets in each AZ.</li>
+                <li>Connected to EC2 using <strong>Session Manager</strong> (no SSH keys needed).</li>
+                <li>Installed <strong>amazon-efs-utils</strong> and mounted EFS to EC2.</li>
+                <li>Tested performance using <strong>FIO</strong> (Flexible I/O Tester) with 10GB writes.</li>
+                <li>Monitored <strong>CloudWatch metrics</strong> for throughput analysis.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>EFS provides shared storage accessible from multiple EC2 instances:</p>
+            <ul>
+                <li><strong>EFS File System</strong> – Scalable NFS storage that grows/shrinks automatically.</li>
+                <li><strong>Mount Targets</strong> – Access points in each Availability Zone for EC2 connectivity.</li>
+                <li><strong>EFS Mount Target SG</strong> – Security group allowing NFS port 2049 from EC2.</li>
+                <li><strong>EFS Client SG</strong> – Security group attached to EC2 instances.</li>
+                <li><strong>EC2 Instance</strong> – Mounts EFS as a local directory (/home/ec2-user/efs).</li>
+                <li><strong>CloudWatch</strong> – Monitors EFS metrics like throughput and IOPS.</li>
+            </ul>
+        </div>
+
+        <!-- Implementation Steps -->
+        <div class="project-section">
+            <h3>Implementation Steps</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Created "EFS Mount Target" security group allowing port 2049 from EFSClient SG.</li>
+                <li><strong>Step 2:</strong> Created EFS file system in Lab VPC with mount targets in all AZs.</li>
+                <li><strong>Step 3:</strong> Disabled automatic backups and lifecycle transitions for the lab.</li>
+                <li><strong>Step 4:</strong> Connected to EC2 instance using AWS Session Manager.</li>
+                <li><strong>Step 5:</strong> Installed EFS utilities: <code>sudo yum install -y amazon-efs-utils</code></li>
+                <li><strong>Step 6:</strong> Created mount directory: <code>sudo mkdir efs</code></li>
+                <li><strong>Step 7:</strong> Mounted EFS using NFS4: <code>sudo mount -t nfs4 fs-xxx.efs.region.amazonaws.com:/ efs</code></li>
+                <li><strong>Step 8:</strong> Ran FIO benchmark: 10GB file, 200 concurrent operations.</li>
+                <li><strong>Step 9:</strong> Monitored PermittedThroughput and DataWriteIOBytes in CloudWatch.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Created <strong>EFS file system</strong> with mount targets across multiple AZs.</li>
+                <li>Configured <strong>Security Groups</strong> for NFS communication (port 2049).</li>
+                <li>Used <strong>Session Manager</strong> for secure EC2 access without SSH keys.</li>
+                <li>Mounted EFS using <strong>NFS4 protocol</strong> with amazon-efs-utils.</li>
+                <li>Performed <strong>performance testing</strong> using FIO benchmarking tool.</li>
+                <li>Calculated <strong>write throughput</strong> from CloudWatch metrics.</li>
+                <li>Understood EFS <strong>burst throughput</strong> and permitted throughput limits.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                EFS is ideal for shared storage across multiple instances:
+            </p>
+            <ul>
+                <li>Use <strong>EFS for shared data</strong> like web content, home directories, or CMS files.</li>
+                <li>Enable <strong>lifecycle management</strong> to move infrequent files to cheaper storage.</li>
+                <li>Use <strong>Provisioned Throughput</strong> for consistent performance requirements.</li>
+                <li>Configure <strong>mount targets in all AZs</strong> where EC2 instances run.</li>
+                <li>Use <strong>encryption at rest</strong> for sensitive data.</li>
+                <li>Monitor <strong>BurstCreditBalance</strong> to avoid throughput throttling.</li>
+                <li>Consider <strong>EFS One Zone</strong> for cost savings in non-critical workloads.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

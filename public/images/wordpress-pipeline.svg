@@ -1,0 +1,68 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">WordPress CI/CD Pipeline Architecture</text>
+  
+  <!-- GitHub -->
+  <rect x="50" y="100" width="140" height="80" fill="#24292e" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="120" y="130" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">GitHub</text>
+  <text x="120" y="155" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Source Code</text>
+  <text x="120" y="172" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">CloudFormation</text>
+  
+  <!-- CodePipeline -->
+  <rect x="250" y="100" width="300" height="80" fill="#FF9900" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="130" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">AWS CodePipeline</text>
+  <text x="400" y="155" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white">Source → Deploy</text>
+  <text x="400" y="172" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white">Automated Workflow</text>
+  
+  <!-- S3 Artifacts -->
+  <rect x="610" y="100" width="140" height="80" fill="#27ae60" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="680" y="130" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">S3 Bucket</text>
+  <text x="680" y="155" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Artifact Store</text>
+  
+  <!-- CloudFormation -->
+  <rect x="250" y="220" width="300" height="100" fill="#5C4EE5" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="255" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">CloudFormation</text>
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white">wordpress-app.yaml</text>
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white">Provisions Infrastructure</text>
+  
+  <!-- EC2 Instance -->
+  <rect x="150" y="360" width="180" height="90" fill="#FF9900" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="240" y="390" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">EC2 Instance</text>
+  <text x="240" y="415" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Apache + PHP</text>
+  <text x="240" y="435" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">WordPress + MySQL</text>
+  
+  <!-- Security Group -->
+  <rect x="370" y="360" width="160" height="90" fill="#e74c3c" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="450" y="390" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Security Group</text>
+  <text x="450" y="415" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">HTTP (80)</text>
+  <text x="450" y="435" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">SSH (22)</text>
+  
+  <!-- User -->
+  <rect x="570" y="360" width="140" height="90" fill="#3498db" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="640" y="395" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Users</text>
+  <text x="640" y="420" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Access WordPress</text>
+  <text x="640" y="437" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">via Browser</text>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2c3e50"/>
+    </marker>
+  </defs>
+  
+  <line x1="190" y1="140" x2="250" y2="140" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="550" y1="140" x2="610" y2="140" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="400" y1="180" x2="400" y2="220" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="320" x2="240" y2="360" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="320" x2="450" y2="360" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="530" y1="405" x2="570" y2="405" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Benefits -->
+  <text x="50" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Automated deployment on every commit</text>
+  <text x="50" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Infrastructure as Code</text>
+  <text x="50" y="550" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Version controlled</text>
+  
+  <text x="350" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Repeatable deployments</text>
+  <text x="350" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ No manual intervention</text>
+  <text x="350" y="550" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Fast rollback capability</text>
+</svg>

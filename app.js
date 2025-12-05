@@ -51,6 +51,54 @@ app.get('/projects/docker-nodejs', (req, res) => {
   res.render('docker-nodejs');
 });
 
+app.get('/projects/sam-pipeline', (req, res) => {
+  res.render('sam-pipeline');
+});
+
+app.get('/projects/sagemaker-ai', (req, res) => {
+  res.render('sagemaker-ai');
+});
+
+app.get('/projects/eks-kubernetes', (req, res) => {
+  res.render('eks-kubernetes');
+});
+
+app.get('/projects/blue-green-deployment', (req, res) => {
+  res.render('blue-green-deployment');
+});
+
+app.get('/projects/opensearch-logs', (req, res) => {
+  res.render('opensearch-logs');
+});
+
+app.get('/projects/multi-tier-app', (req, res) => {
+  res.render('multi-tier-app');
+});
+
+app.get('/projects/efs-storage', (req, res) => {
+  res.render('efs-storage');
+});
+
+app.get('/projects/s3-static-website', (req, res) => {
+  res.render('s3-static-website');
+});
+
+app.get('/projects/vpc-networking', (req, res) => {
+  res.render('vpc-networking');
+});
+
+app.get('/projects/rds-migration', (req, res) => {
+  res.render('rds-migration');
+});
+
+app.get('/projects/vpc-peering', (req, res) => {
+  res.render('vpc-peering');
+});
+
+app.get('/projects/cognito-auth', (req, res) => {
+  res.render('cognito-auth');
+});
+
 app.get('/projects/cicd', (req, res) => {
   res.send('<h1>CI/CD project page coming soon 🔧</h1><a href="/">Back</a>');
 });

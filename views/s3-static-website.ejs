@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 Static Website with DevOps | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>S3 Static Website with Full DevOps Pipeline</h1>
+        <p>Built a production-ready static website on Amazon S3 with versioning, cross-region replication, access logging, CloudTrail monitoring, lifecycle policies, and Lambda event-driven automation.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/s3-static-website.png" alt="S3 Static Website Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates building a <strong>complete S3-based static website</strong> with enterprise-grade 
+                features including disaster recovery, monitoring, cost optimization, and serverless automation.
+            </p>
+            <ul>
+                <li>Created S3 bucket and enabled <strong>Static Website Hosting</strong>.</li>
+                <li>Uploaded HTML, CSS, and images with proper <strong>bucket policy</strong> for public access.</li>
+                <li>Enabled <strong>Versioning</strong> to protect against accidental deletions.</li>
+                <li>Configured <strong>Lifecycle Rules</strong> for cost optimization.</li>
+                <li>Set up <strong>Cross-Region Replication (CRR)</strong> for disaster recovery.</li>
+                <li>Enabled <strong>Access Logging</strong> and <strong>CloudTrail</strong> for monitoring.</li>
+                <li>Built <strong>Lambda automation</strong> triggered by S3 upload events.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The architecture implements a production-ready static website:</p>
+            <ul>
+                <li><strong>S3 Primary Bucket</strong> – Hosts website files (index.html, style.css, images/).</li>
+                <li><strong>Static Website Hosting</strong> – Serves files as a public website endpoint.</li>
+                <li><strong>Bucket Policy</strong> – Allows public read access (s3:GetObject) for all objects.</li>
+                <li><strong>Versioning</strong> – Maintains multiple versions of files for recovery.</li>
+                <li><strong>Lifecycle Rules</strong> – Moves old versions to cheaper storage, deletes expired files.</li>
+                <li><strong>Cross-Region Replication</strong> – Copies objects to a backup bucket in another region.</li>
+                <li><strong>Access Logs Bucket</strong> – Stores server access logs for analysis.</li>
+                <li><strong>CloudTrail</strong> – Records all S3 API calls (uploads, downloads, deletes).</li>
+                <li><strong>Lambda Function</strong> – Triggered on S3 uploads for event-driven automation.</li>
+            </ul>
+        </div>
+
+        <!-- Implementation Steps -->
+        <div class="project-section">
+            <h3>Implementation Steps</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Created S3 bucket in us-east-1 with unique name.</li>
+                <li><strong>Step 2:</strong> Enabled Static Website Hosting with index.html as index document.</li>
+                <li><strong>Step 3:</strong> Uploaded website files (HTML, CSS, images folder).</li>
+                <li><strong>Step 4:</strong> Added bucket policy for public read access.</li>
+                <li><strong>Step 5:</strong> Enabled Versioning to protect files from overwrites.</li>
+                <li><strong>Step 6:</strong> Created Lifecycle Rules to transition old versions to IA storage.</li>
+                <li><strong>Step 7:</strong> Created destination bucket in another region for CRR.</li>
+                <li><strong>Step 8:</strong> Configured Replication Rules with IAM role.</li>
+                <li><strong>Step 9:</strong> Created logs bucket and enabled Server Access Logging.</li>
+                <li><strong>Step 10:</strong> Enabled CloudTrail data events for S3 API monitoring.</li>
+                <li><strong>Step 11:</strong> Created Lambda function triggered by S3 Object Created events.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Configured <strong>S3 Static Website Hosting</strong> with proper index document.</li>
+                <li>Wrote <strong>bucket policies</strong> for public access control.</li>
+                <li>Implemented <strong>Versioning</strong> for data protection and recovery.</li>
+                <li>Created <strong>Lifecycle Rules</strong> for automated cost optimization.</li>
+                <li>Set up <strong>Cross-Region Replication</strong> for disaster recovery.</li>
+                <li>Enabled <strong>Server Access Logging</strong> for traffic analysis.</li>
+                <li>Configured <strong>CloudTrail</strong> for security auditing.</li>
+                <li>Built <strong>event-driven automation</strong> with Lambda and S3 triggers.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                This project covers real-world S3 architecture patterns:
+            </p>
+            <ul>
+                <li>Use <strong>CloudFront</strong> in production for HTTPS and global CDN caching.</li>
+                <li>Enable <strong>S3 encryption</strong> (SSE-S3 or SSE-KMS) for sensitive data.</li>
+                <li>Apply <strong>least-privilege bucket policies</strong> - avoid Principal: "*" when possible.</li>
+                <li>Use <strong>S3 Intelligent-Tiering</strong> for unpredictable access patterns.</li>
+                <li>Monitor <strong>replication metrics</strong> to ensure CRR is working.</li>
+                <li>Set up <strong>CloudWatch alarms</strong> for 4xx/5xx errors on website.</li>
+                <li>Consider <strong>SNS notifications</strong> from Lambda for upload alerts.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

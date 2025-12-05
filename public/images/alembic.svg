@@ -1,0 +1,65 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">Alembic Database Migration Architecture</text>
+  
+  <!-- Application Layer -->
+  <rect x="300" y="80" width="200" height="80" fill="#3498db" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Python Application</text>
+  <text x="400" y="140" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">SQLAlchemy ORM</text>
+  
+  <!-- Arrow down -->
+  <line x1="400" y1="160" x2="400" y2="220" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Alembic Layer -->
+  <rect x="250" y="220" width="300" height="100" fill="#e74c3c" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="250" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Alembic Migration Tool</text>
+  <text x="400" y="275" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white">• Version Control</text>
+  <text x="400" y="295" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white">• Migration Scripts</text>
+  <text x="400" y="315" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white">• Upgrade/Downgrade</text>
+  
+  <!-- Arrow down -->
+  <line x1="400" y1="320" x2="400" y2="380" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Database -->
+  <rect x="300" y="380" width="200" height="80" fill="#27ae60" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="415" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Database</text>
+  <text x="400" y="440" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">PostgreSQL/MySQL</text>
+  
+  <!-- Migration Files -->
+  <rect x="50" y="220" width="150" height="100" fill="#95a5a6" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="125" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Migration Files</text>
+  <text x="125" y="270" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">versions/</text>
+  <text x="125" y="290" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">001_initial.py</text>
+  <text x="125" y="310" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">002_add_users.py</text>
+  
+  <!-- Arrow from files to alembic -->
+  <line x1="200" y1="270" x2="250" y2="270" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Version Table -->
+  <rect x="600" y="380" width="150" height="80" fill="#f39c12" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="675" y="410" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">alembic_version</text>
+  <text x="675" y="435" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Tracks current</text>
+  <text x="675" y="455" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">migration state</text>
+  
+  <!-- Arrow from database to version table -->
+  <line x1="500" y1="420" x2="600" y2="420" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2c3e50"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <text x="50" y="520" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Key Features:</text>
+  <text x="50" y="545" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• Database schema version control</text>
+  <text x="50" y="565" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• Automatic migration generation</text>
+  <text x="50" y="585" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• Rollback capabilities</text>
+  
+  <text x="450" y="545" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• Works with SQLAlchemy</text>
+  <text x="450" y="565" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• Python-based migrations</text>
+  <text x="450" y="585" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• Team collaboration support</text>
+</svg>

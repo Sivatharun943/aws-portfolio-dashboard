@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tier Cloud Application | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Multi-Tier Cloud-Native Application</h1>
+        <p>Built a complete multi-tier AWS application with EC2 frontend, Lambda serverless backend, DynamoDB & RDS databases, SNS notifications, and comprehensive IAM security.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/multi-tier-app.png" alt="Multi-Tier Application Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates a <strong>cloud-native multi-tier architecture</strong> combining traditional EC2 hosting 
+                with serverless backend services, showcasing real-world enterprise application patterns.
+            </p>
+            <ul>
+                <li><strong>Frontend:</strong> Static files stored in S3, synced to EC2 running Apache HTTPD.</li>
+                <li><strong>Backend:</strong> Serverless Lambda function handling order processing.</li>
+                <li><strong>Databases:</strong> DynamoDB for orders, RDS (MariaDB) for relational data practice.</li>
+                <li><strong>Notifications:</strong> SNS sends email alerts on new orders.</li>
+                <li><strong>Security:</strong> IAM policies/roles + Security Groups for network protection.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The architecture follows a multi-tier pattern with separation of concerns:</p>
+            <ul>
+                <li><strong>S3 Bucket</strong> – Stores frontend files (HTML, CSS, JS), synced to EC2.</li>
+                <li><strong>EC2 Instance</strong> – Hosts the frontend using Apache, serves static content.</li>
+                <li><strong>Lambda Function</strong> – Serverless backend that processes orders.</li>
+                <li><strong>DynamoDB</strong> – NoSQL database storing order data (fast, scalable).</li>
+                <li><strong>RDS (MariaDB)</strong> – Relational database for structured data practice.</li>
+                <li><strong>SNS Topic</strong> – Sends email notifications when orders are placed.</li>
+                <li><strong>IAM Roles</strong> – EC2 role (S3 read), Lambda role (DynamoDB + SNS).</li>
+                <li><strong>Security Groups</strong> – EC2 SG (SSH + HTTP), RDS SG (MySQL from EC2 only).</li>
+            </ul>
+        </div>
+
+        <!-- Implementation Steps -->
+        <div class="project-section">
+            <h3>Implementation Steps</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Created S3 bucket and uploaded frontend files.</li>
+                <li><strong>Step 2:</strong> Created IAM policies for EC2, Lambda, RDS, and AppAdmin.</li>
+                <li><strong>Step 3:</strong> Attached policies to IAM roles for each service.</li>
+                <li><strong>Step 4:</strong> Created DynamoDB table with order_id as primary key.</li>
+                <li><strong>Step 5:</strong> Created SNS topic and subscribed/verified email.</li>
+                <li><strong>Step 6:</strong> Created Lambda function with DynamoDB write + SNS publish.</li>
+                <li><strong>Step 7:</strong> Launched EC2, installed Apache, synced S3 files to /var/www/html.</li>
+                <li><strong>Step 8:</strong> Created RDS MariaDB instance in VPC.</li>
+                <li><strong>Step 9:</strong> Configured Security Groups for EC2 and RDS connectivity.</li>
+                <li><strong>Step 10:</strong> Tested EC2 → RDS connection using MariaDB client.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Built a <strong>multi-tier architecture</strong> combining EC2 and serverless components.</li>
+                <li>Used <strong>S3 sync</strong> to deploy frontend files to EC2.</li>
+                <li>Created <strong>granular IAM policies</strong> following least-privilege principle.</li>
+                <li>Implemented <strong>Lambda + DynamoDB + SNS</strong> for serverless order processing.</li>
+                <li>Configured <strong>RDS in VPC</strong> with Security Group restrictions.</li>
+                <li>Practiced <strong>EC2 to RDS connectivity</strong> using MariaDB client.</li>
+                <li>Understood <strong>when to use DynamoDB vs RDS</strong> based on data patterns.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                This project demonstrates enterprise-ready patterns:
+            </p>
+            <ul>
+                <li>Use <strong>DynamoDB</strong> for fast, scalable NoSQL data (orders, sessions).</li>
+                <li>Use <strong>RDS</strong> for relational data requiring joins and transactions.</li>
+                <li>Always apply <strong>least-privilege IAM policies</strong> to each service.</li>
+                <li>Restrict <strong>RDS Security Group</strong> to allow only EC2/Lambda access.</li>
+                <li>Use <strong>SNS</strong> for decoupled notifications and event-driven architecture.</li>
+                <li>Consider <strong>API Gateway</strong> in front of Lambda for production APIs.</li>
+                <li>Enable <strong>CloudWatch Logs</strong> for Lambda monitoring and debugging.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

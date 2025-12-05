@@ -1,0 +1,85 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">Docker + CircleCI CI/CD Architecture</text>
+  
+  <!-- Developer -->
+  <rect x="50" y="100" width="140" height="70" fill="#3498db" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="120" y="130" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Developer</text>
+  <text x="120" y="150" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Node.js App</text>
+  <text x="120" y="165" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">+ Dockerfile</text>
+  
+  <!-- GitHub -->
+  <rect x="240" y="100" width="140" height="70" fill="#24292e" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="310" y="130" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">GitHub</text>
+  <text x="310" y="150" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Source Control</text>
+  <text x="310" y="165" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Triggers CI/CD</text>
+  
+  <!-- CircleCI -->
+  <rect x="430" y="100" width="140" height="70" fill="#343434" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="500" y="125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">CircleCI</text>
+  <text x="500" y="145" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Build Docker Image</text>
+  <text x="500" y="162" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Run Tests</text>
+  
+  <!-- Docker Hub -->
+  <rect x="620" y="100" width="140" height="70" fill="#0db7ed" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="690" y="130" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Docker Hub</text>
+  <text x="690" y="150" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Image Registry</text>
+  
+  <!-- Local Docker -->
+  <rect x="50" y="220" width="140" height="70" fill="#0db7ed" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="120" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Local Docker</text>
+  <text x="120" y="265" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Build &amp; Test</text>
+  <text x="120" y="282" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Locally</text>
+  
+  <!-- Docker Image -->
+  <rect x="240" y="220" width="320" height="70" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Docker Image</text>
+  <text x="400" y="265" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50">Node.js App + Dependencies</text>
+  <text x="400" y="282" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50">Built from Dockerfile</text>
+  
+  <!-- Deployment -->
+  <rect x="610" y="220" width="150" height="70" fill="#27ae60" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="685" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Deployment</text>
+  <text x="685" y="265" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">EC2 / ECS</text>
+  <text x="685" y="282" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Pull &amp; Run</text>
+  
+  <!-- Workflow -->
+  <text x="400" y="340" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">CI/CD Workflow</text>
+  
+  <rect x="100" y="360" width="600" height="100" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  
+  <text x="120" y="390" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">1. Developer commits code</text>
+  <text x="120" y="410" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">2. GitHub triggers CircleCI</text>
+  <text x="120" y="430" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">3. CircleCI builds Docker image</text>
+  <text x="120" y="450" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">4. Image pushed to Docker Hub</text>
+  
+  <text x="450" y="390" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">5. Deploy to cloud</text>
+  <text x="450" y="410" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">6. Pull image from registry</text>
+  <text x="450" y="430" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">7. Run container</text>
+  <text x="450" y="450" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">8. Application live!</text>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2c3e50"/>
+    </marker>
+  </defs>
+  
+  <line x1="190" y1="135" x2="240" y2="135" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="380" y1="135" x2="430" y2="135" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="570" y1="135" x2="620" y2="135" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="690" y1="170" x2="690" y2="220" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Benefits -->
+  <text x="50" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Consistent environments</text>
+  <text x="50" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Automated builds</text>
+  <text x="50" y="550" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Fast deployment</text>
+  
+  <text x="300" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Version control</text>
+  <text x="300" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Easy rollback</text>
+  <text x="300" y="550" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Portable containers</text>
+  
+  <text x="550" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Scalable</text>
+  <text x="550" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Isolated</text>
+  <text x="550" y="550" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Reproducible</text>
+</svg>

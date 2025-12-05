@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="600" fill="#f8f9fa"/>
+  <text x="450" y="35" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">Multi-Tier Application</text>
+  
+  <rect x="30" y="220" width="90" height="70" fill="#34495e" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="75" y="250" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Users</text>
+  <text x="75" y="270" font-family="Arial" font-size="9" text-anchor="middle" fill="white">Browser</text>
+  
+  <rect x="150" y="60" width="120" height="70" fill="#27ae60" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="210" y="90" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">S3 Bucket</text>
+  <text x="210" y="110" font-family="Arial" font-size="9" text-anchor="middle" fill="white">Frontend Files</text>
+  
+  <rect x="150" y="180" width="120" height="150" fill="#3498db" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="210" y="210" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="white">EC2</text>
+  <text x="210" y="230" font-family="Arial" font-size="9" text-anchor="middle" fill="white">Apache HTTPD</text>
+  <text x="210" y="250" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Frontend Server</text>
+  <rect x="165" y="265" width="90" height="25" fill="#2980b9" rx="3"/>
+  <text x="210" y="282" font-family="Arial" font-size="8" text-anchor="middle" fill="white">/var/www/html</text>
+  <rect x="165" y="295" width="90" height="25" fill="#1abc9c" rx="3"/>
+  <text x="210" y="312" font-family="Arial" font-size="8" text-anchor="middle" fill="white">MariaDB Client</text>
+  
+  <rect x="320" y="180" width="120" height="80" fill="#f39c12" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="380" y="210" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Lambda</text>
+  <text x="380" y="230" font-family="Arial" font-size="9" text-anchor="middle" fill="white">Order Processing</text>
+  <text x="380" y="248" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Serverless Backend</text>
+  
+  <rect x="490" y="120" width="110" height="70" fill="#9b59b6" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="545" y="150" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">DynamoDB</text>
+  <text x="545" y="170" font-family="Arial" font-size="9" text-anchor="middle" fill="white">Orders Table</text>
+  
+  <rect x="490" y="220" width="110" height="70" fill="#e74c3c" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="545" y="250" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">SNS</text>
+  <text x="545" y="270" font-family="Arial" font-size="9" text-anchor="middle" fill="white">Email Alerts</text>
+  
+  <rect x="490" y="320" width="110" height="70" fill="#1abc9c" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="545" y="350" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">RDS MariaDB</text>
+  <text x="545" y="370" font-family="Arial" font-size="9" text-anchor="middle" fill="white">Relational Data</text>
+  
+  <rect x="650" y="100" width="220" height="180" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="5"/>
+  <text x="760" y="125" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">IAM Policies</text>
+  <rect x="665" y="140" width="90" height="30" fill="#FF9900" rx="3"/>
+  <text x="710" y="160" font-family="Arial" font-size="8" text-anchor="middle" fill="white">EC2 Policy</text>
+  <rect x="765" y="140" width="90" height="30" fill="#FF9900" rx="3"/>
+  <text x="810" y="160" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Lambda Policy</text>
+  <rect x="665" y="180" width="90" height="30" fill="#FF9900" rx="3"/>
+  <text x="710" y="200" font-family="Arial" font-size="8" text-anchor="middle" fill="white">RDS Policy</text>
+  <rect x="765" y="180" width="90" height="30" fill="#FF9900" rx="3"/>
+  <text x="810" y="200" font-family="Arial" font-size="8" text-anchor="middle" fill="white">AppAdmin</text>
+  <text x="760" y="235" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#2c3e50">Security Groups</text>
+  <rect x="665" y="245" width="90" height="25" fill="#e74c3c" rx="3"/>
+  <text x="710" y="262" font-family="Arial" font-size="7" text-anchor="middle" fill="white">EC2 SG: 22,80</text>
+  <rect x="765" y="245" width="90" height="25" fill="#e74c3c" rx="3"/>
+  <text x="810" y="262" font-family="Arial" font-size="7" text-anchor="middle" fill="white">RDS SG: 3306</text>
+  
+  <line x1="120" y1="255" x2="145" y2="255" stroke="#2c3e50" stroke-width="2"/>
+  <polygon points="145,250 155,255 145,260" fill="#2c3e50"/>
+  
+  <line x1="210" y1="130" x2="210" y2="175" stroke="#27ae60" stroke-width="2"/>
+  <polygon points="205,170 210,180 215,170" fill="#27ae60"/>
+  <text x="225" y="155" font-family="Arial" font-size="7" fill="#27ae60">s3 sync</text>
+  
+  <line x1="270" y1="220" x2="315" y2="220" stroke="#f39c12" stroke-width="2"/>
+  <polygon points="310,215 320,220 310,225" fill="#f39c12"/>
+  
+  <line x1="440" y1="200" x2="485" y2="155" stroke="#9b59b6" stroke-width="2"/>
+  <polygon points="480,150 490,155 480,160" fill="#9b59b6"/>
+  <text x="465" y="165" font-family="Arial" font-size="7" fill="#666">write</text>
+  
+  <line x1="440" y1="240" x2="485" y2="255" stroke="#e74c3c" stroke-width="2"/>
+  <polygon points="480,250 490,255 480,260" fill="#e74c3c"/>
+  <text x="465" y="260" font-family="Arial" font-size="7" fill="#666">publish</text>
+  
+  <line x1="270" y1="310" x2="485" y2="355" stroke="#1abc9c" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="480,350 490,355 480,360" fill="#1abc9c"/>
+  <text x="380" y="345" font-family="Arial" font-size="7" fill="#1abc9c">practice connection</text>
+  
+  <rect x="30" y="430" width="840" height="150" fill="#ecf0f1" stroke="#bdc3c7" rx="5"/>
+  <text x="450" y="455" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Architecture Summary</text>
+  <text x="50" y="485" font-family="Arial" font-size="9" fill="#2c3e50">Frontend: S3 files synced to EC2 Apache server</text>
+  <text x="50" y="505" font-family="Arial" font-size="9" fill="#2c3e50">Backend: Lambda processes orders serverlessly</text>
+  <text x="50" y="525" font-family="Arial" font-size="9" fill="#2c3e50">Database: DynamoDB for orders, RDS for relational practice</text>
+  <text x="350" y="485" font-family="Arial" font-size="9" fill="#2c3e50">Notifications: SNS sends email on new orders</text>
+  <text x="350" y="505" font-family="Arial" font-size="9" fill="#2c3e50">Security: IAM roles with least-privilege policies</text>
+  <text x="350" y="525" font-family="Arial" font-size="9" fill="#2c3e50">Network: Security Groups restrict access</text>
+  <text x="650" y="485" font-family="Arial" font-size="9" fill="#27ae60" font-weight="bold">Real enterprise multi-tier pattern</text>
+  <text x="650" y="505" font-family="Arial" font-size="9" fill="#27ae60" font-weight="bold">Combines EC2 + Serverless + Databases</text>
+</svg>

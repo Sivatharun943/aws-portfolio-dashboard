@@ -97,6 +97,12 @@ header .container {
   margin: 0 0 0.5rem 0;
 }
 
+.hero-title {
+  font-size: 3rem !important;
+  color: white;
+  font-weight: 700;
+}
+
 #hero p {
   font-size: 1.2rem;
   max-width: 600px;
@@ -120,7 +126,7 @@ header .container {
 
 /* --- Footer --- */
 footer {
-  background: var(--primary);
+  background: transparent;
   color: var(--highlight);
   text-align: center;
   padding: 2rem;
@@ -160,5 +166,10 @@ footer {
   #hero h2 {
     font-size: 2.2rem;
   }
+}
+
+/* --- Alternate Background --- */
+.alternate-bg {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8));
 }
 

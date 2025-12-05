@@ -1,0 +1,82 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">Serverless Architecture</text>
+  
+  <!-- Client -->
+  <rect x="320" y="80" width="160" height="60" fill="#3498db" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Client</text>
+  <text x="400" y="125" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Web/Mobile App</text>
+  
+  <!-- API Gateway -->
+  <rect x="300" y="170" width="200" height="70" fill="#FF9900" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="200" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">API Gateway</text>
+  <text x="400" y="220" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">REST/WebSocket API</text>
+  
+  <!-- Lambda Functions -->
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Lambda Functions</text>
+  
+  <rect x="80" y="300" width="130" height="70" fill="#f39c12" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="145" y="325" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Auth</text>
+  <text x="145" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">User Login</text>
+  <text x="145" y="360" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">JWT Tokens</text>
+  
+  <rect x="240" y="300" width="130" height="70" fill="#f39c12" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="305" y="325" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">API</text>
+  <text x="305" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Business</text>
+  <text x="305" y="360" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Logic</text>
+  
+  <rect x="400" y="300" width="130" height="70" fill="#f39c12" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="465" y="325" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Data</text>
+  <text x="465" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Processing</text>
+  <text x="465" y="360" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Transform</text>
+  
+  <rect x="560" y="300" width="130" height="70" fill="#f39c12" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="625" y="325" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Scheduler</text>
+  <text x="625" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Cron Jobs</text>
+  <text x="625" y="360" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Events</text>
+  
+  <!-- Data Layer -->
+  <text x="400" y="410" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Data &amp; Storage</text>
+  
+  <rect x="100" y="430" width="140" height="60" fill="#3498db" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="170" y="455" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">DynamoDB</text>
+  <text x="170" y="475" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">NoSQL Database</text>
+  
+  <rect x="270" y="430" width="140" height="60" fill="#27ae60" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="340" y="455" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">S3</text>
+  <text x="340" y="475" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Object Storage</text>
+  
+  <rect x="440" y="430" width="140" height="60" fill="#9b59b6" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="510" y="455" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">SQS/SNS</text>
+  <text x="510" y="475" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Message Queue</text>
+  
+  <rect x="610" y="430" width="140" height="60" fill="#e74c3c" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="680" y="455" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">CloudWatch</text>
+  <text x="680" y="475" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Monitoring</text>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2c3e50"/>
+    </marker>
+  </defs>
+  
+  <line x1="400" y1="140" x2="400" y2="170" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="240" x2="145" y2="300" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="380" y1="240" x2="305" y2="300" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="420" y1="240" x2="465" y2="300" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="240" x2="625" y2="300" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Benefits -->
+  <text x="50" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ No server management</text>
+  <text x="50" y="550" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Auto-scaling</text>
+  <text x="50" y="570" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Pay per use</text>
+  
+  <text x="250" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ High availability</text>
+  <text x="250" y="550" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Event-driven</text>
+  <text x="250" y="570" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Reduced costs</text>
+  
+  <text x="450" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Fast deployment</text>
+  <text x="450" y="550" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Focus on code</text>
+  <text x="450" y="570" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Built-in fault tolerance</text>
+</svg>

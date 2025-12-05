@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDS Database Migration | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>RDS Database Migration</h1>
+        <p>Migrated a café application database from EC2-hosted MariaDB to Amazon RDS. Exported data using mysqldump, configured networking, and learned managed database best practices.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/rds-migration.png" alt="RDS Migration Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates migrating a database from <strong>self-managed MariaDB on EC2</strong> to 
+                <strong>Amazon RDS</strong>, a fully managed relational database service.
+            </p>
+            <ul>
+                <li>Created an <strong>RDS MariaDB instance</strong> with proper networking.</li>
+                <li>Verified the existing <strong>café web application</strong> and local database.</li>
+                <li>Exported database using <strong>mysqldump</strong> for backup and migration.</li>
+                <li>Configured <strong>EC2 to RDS connectivity</strong> via security groups.</li>
+                <li>Learned about <strong>managed database services</strong> vs self-hosted.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The migration architecture shows the transition from self-managed to managed databases:</p>
+            <ul>
+                <li><strong>EC2 Instance (CafeServer)</strong> – Hosts the café web application.</li>
+                <li><strong>Local MariaDB</strong> – Original self-managed database on EC2.</li>
+                <li><strong>RDS MariaDB Instance</strong> – Managed database in VPC with automated backups.</li>
+                <li><strong>Secrets Manager</strong> – Securely stores RDS credentials.</li>
+                <li><strong>Security Group (dbSG)</strong> – Controls network access to RDS on port 3306.</li>
+                <li><strong>Subnet Group (lab-db-subnet-group)</strong> – Defines RDS placement in VPC.</li>
+                <li><strong>mysqldump</strong> – Tool for exporting/importing database data.</li>
+                <li><strong>Systems Manager Session Manager</strong> – Secure EC2 access without SSH keys.</li>
+            </ul>
+        </div>
+
+        <!-- Implementation Steps -->
+        <div class="project-section">
+            <h3>Implementation Steps</h3>
+            <ul>
+                <li><strong>Task 1:</strong> Created RDS MariaDB instance (CafeDatabase) with db.t3.micro, 20GB storage.</li>
+                <li><strong>Task 2:</strong> Verified café app working on EC2 with local MariaDB.</li>
+                <li><strong>Task 3:</strong> Connected to EC2 via Session Manager and exported database:
+                    <code>mysqldump --databases cafe_db -u root -p > CafeDbDump.sql</code>
+                </li>
+                <li><strong>Task 4:</strong> Attempted EC2 to RDS connection using RDS endpoint.</li>
+                <li><strong>Issue:</strong> Security group didn't allow port 3306 from EC2 security group.</li>
+                <li><strong>Resolution:</strong> Would require modifying dbSG inbound rules to allow traffic from CafeSG.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Understood <strong>self-managed vs managed databases</strong> trade-offs.</li>
+                <li>Created <strong>RDS instance</strong> with proper VPC and subnet configuration.</li>
+                <li>Used <strong>Secrets Manager</strong> for secure credential storage.</li>
+                <li>Exported database using <strong>mysqldump</strong> for backup and migration.</li>
+                <li>Configured <strong>security groups</strong> for database network access.</li>
+                <li>Used <strong>Systems Manager Session Manager</strong> for secure EC2 access.</li>
+                <li>Understood <strong>port 3306</strong> requirements for MySQL/MariaDB connectivity.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                Database migration requires careful planning and security:
+            </p>
+            <ul>
+                <li>Always <strong>backup data</strong> before migration using mysqldump or snapshots.</li>
+                <li>Use <strong>RDS automated backups</strong> instead of managing backups manually.</li>
+                <li>Enable <strong>Multi-AZ deployment</strong> for production databases.</li>
+                <li>Use <strong>Secrets Manager</strong> or Parameter Store for credentials, never hardcode.</li>
+                <li>Restrict <strong>security group rules</strong> to only necessary ports and sources.</li>
+                <li>Test <strong>connectivity</strong> before attempting data import.</li>
+                <li>Consider <strong>RDS Proxy</strong> for connection pooling in high-traffic apps.</li>
+                <li>Enable <strong>encryption at rest</strong> and <strong>in transit</strong> for sensitive data.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

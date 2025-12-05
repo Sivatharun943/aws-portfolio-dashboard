@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serverless CI/CD with AWS SAM & GitHub Actions | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Serverless CI/CD with AWS SAM & GitHub Actions</h1>
+        <p>Built a serverless application using AWS SAM and created a multi-stage CI/CD pipeline with GitHub Actions for automated deployments to Dev and Production environments.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/sam-pipeline.png" alt="AWS SAM Pipeline Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates building a <strong>serverless application</strong> using the <strong>AWS Serverless Application Model (SAM)</strong> 
+                and automating deployments through a <strong>multi-stage CI/CD pipeline</strong> with <strong>GitHub Actions</strong>.
+            </p>
+            <ul>
+                <li>Initialized a serverless "Hello World" application using <strong>AWS SAM CLI</strong>.</li>
+                <li>Built and tested the Lambda function locally using Docker.</li>
+                <li>Bootstrapped pipeline resources for <strong>Dev</strong> and <strong>Prod</strong> stages using SAM pipeline.</li>
+                <li>Configured <strong>GitHub Actions</strong> to automatically build, test, and deploy on every commit.</li>
+                <li>Deployed infrastructure via <strong>CloudFormation</strong> stacks managed by SAM.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The architecture consists of a complete CI/CD workflow from code commit to production deployment:</p>
+            <ul>
+                <li><strong>Developer</strong> – Writes code locally and tests using SAM CLI with Docker.</li>
+                <li><strong>GitHub Repository</strong> – Stores source code, SAM templates, and pipeline configuration.</li>
+                <li><strong>GitHub Actions</strong> – Triggered on push to main branch; runs build, test, and deploy jobs.</li>
+                <li><strong>AWS SAM</strong> – Packages and deploys serverless applications using CloudFormation.</li>
+                <li><strong>S3 Artifact Buckets</strong> – Stores deployment artifacts for Dev and Prod stages.</li>
+                <li><strong>CloudFormation Stacks</strong> – Creates and manages Lambda, API Gateway, and IAM resources.</li>
+                <li><strong>Lambda Function</strong> – Runs the serverless application code (Python).</li>
+                <li><strong>API Gateway</strong> – Exposes the Lambda function as a REST API endpoint.</li>
+            </ul>
+        </div>
+
+        <!-- Pipeline Stages -->
+        <div class="project-section">
+            <h3>Pipeline Stages</h3>
+            <p>The CI/CD pipeline follows a two-stage deployment model:</p>
+            <ul>
+                <li><strong>Stage 1: Dev Environment</strong>
+                    <ul>
+                        <li>Triggered automatically on every push to main branch.</li>
+                        <li>Builds and packages the SAM application.</li>
+                        <li>Deploys to the Dev CloudFormation stack (sam-app-dev).</li>
+                        <li>Runs integration tests against the Dev environment.</li>
+                    </ul>
+                </li>
+                <li><strong>Stage 2: Prod Environment</strong>
+                    <ul>
+                        <li>Deploys to Production after successful Dev deployment.</li>
+                        <li>Uses separate IAM roles and S3 buckets for isolation.</li>
+                        <li>Creates the Prod CloudFormation stack (sam-app-prod).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Used <strong>sam init</strong> to scaffold a serverless application with best practices.</li>
+                <li>Tested Lambda functions locally using <strong>sam local invoke</strong> with Docker.</li>
+                <li>Bootstrapped multi-stage pipeline resources using <strong>sam pipeline init --bootstrap</strong>.</li>
+                <li>Configured GitHub Actions workflow for automated CI/CD deployments.</li>
+                <li>Managed AWS credentials securely using GitHub Secrets.</li>
+                <li>Understood how SAM abstracts CloudFormation for serverless deployments.</li>
+                <li>Learned the importance of separate environments (Dev/Prod) for safe deployments.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                This project demonstrates a production-ready CI/CD workflow for serverless applications:
+            </p>
+            <ul>
+                <li>Use <strong>separate AWS accounts or profiles</strong> for Dev and Prod environments.</li>
+                <li>Store AWS credentials in <strong>GitHub Secrets</strong>, never in code.</li>
+                <li>Use <strong>IAM roles with least privilege</strong> for pipeline execution and CloudFormation.</li>
+                <li>Enable <strong>CloudWatch Logs</strong> for Lambda function monitoring.</li>
+                <li>Consider adding <strong>manual approval gates</strong> before production deployments.</li>
+                <li>Clean up CloudFormation stacks when no longer needed to avoid costs.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">⬅ Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
