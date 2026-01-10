@@ -1,0 +1,101 @@
+/* Apply styles only to project pages */
+body.project-page {
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafc;  /* clean light background */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Slim Hero Section (just title + short text) */
+body.project-page .project-hero {
+  text-align: center;
+  padding: 1.5rem 1rem;  /* much smaller */
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+body.project-page .project-hero h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #222;
+}
+
+body.project-page .project-hero p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Project Details Wrapper */
+body.project-page .project-details {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Diagram - smaller + centered */
+body.project-page .project-diagram {
+  max-width: 60%;
+  height: auto;
+  margin: 1.5rem auto;
+  display: block;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Section Cards */
+body.project-page .project-section {
+  background: #fff;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+body.project-page .project-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #222;
+  border-left: 3px solid #2563eb; /* subtle blue accent */
+  padding-left: 0.5rem;
+}
+
+body.project-page .project-section p,
+body.project-page .project-section ul {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+body.project-page .project-section li {
+  margin-bottom: 0.4rem;
+}
+
+/* Button */
+body.project-page .btn {
+  display: inline-block;
+  margin: 2rem auto 0;
+  padding: 0.7rem 1.5rem;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+body.project-page .btn:hover {
+  background: #1e4ed8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body.project-page .project-diagram {
+    max-width: 90%;
+  }
+}
+

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="600" fill="#f8f9fa"/>
+  <text x="450" y="35" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">VPC Peering</text>
+  
+  <rect x="30" y="80" width="350" height="450" fill="#e3f2fd" stroke="#3498db" stroke-width="2" rx="8"/>
+  <text x="205" y="105" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#3498db">Lab VPC (10.0.0.0/16)</text>
+  
+  <rect x="60" y="140" width="130" height="70" fill="#3498db" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="125" y="170" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">EC2 Instance</text>
+  <text x="125" y="188" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Inventory App</text>
+  
+  <rect x="60" y="250" width="130" height="60" fill="#1abc9c" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="125" y="275" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Route Table</text>
+  <text x="125" y="293" font-family="Arial" font-size="7" text-anchor="middle" fill="white">10.5.0.0/16  Peer</text>
+  
+  <rect x="60" y="340" width="130" height="60" fill="#f39c12" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="125" y="365" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Security Group</text>
+  <text x="125" y="383" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Port 3306 Allow</text>
+  
+  <rect x="60" y="430" width="130" height="60" fill="#e74c3c" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="125" y="455" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">VPC Flow Logs</text>
+  <text x="125" y="473" font-family="Arial" font-size="7" text-anchor="middle" fill="white">CloudWatch</text>
+  
+  <rect x="520" y="80" width="350" height="450" fill="#fce4ec" stroke="#e91e63" stroke-width="2" rx="8"/>
+  <text x="695" y="105" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#e91e63">Shared VPC (10.5.0.0/16)</text>
+  
+  <rect x="550" y="140" width="130" height="70" fill="#e91e63" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="615" y="170" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">RDS Database</text>
+  <text x="615" y="188" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Private DB</text>
+  
+  <rect x="550" y="250" width="130" height="60" fill="#1abc9c" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="615" y="275" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Route Table</text>
+  <text x="615" y="293" font-family="Arial" font-size="7" text-anchor="middle" fill="white">10.0.0.0/16  Peer</text>
+  
+  <rect x="550" y="340" width="130" height="60" fill="#f39c12" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="615" y="365" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Security Group</text>
+  <text x="615" y="383" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Port 3306 Allow</text>
+  
+  <rect x="550" y="430" width="130" height="60" fill="#e74c3c" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="615" y="455" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">VPC Flow Logs</text>
+  <text x="615" y="473" font-family="Arial" font-size="7" text-anchor="middle" fill="white">CloudWatch</text>
+  
+  <rect x="380" y="200" width="140" height="80" fill="#9b59b6" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="450" y="230" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">VPC Peering</text>
+  <text x="450" y="250" font-family="Arial" font-size="9" text-anchor="middle" fill="white">Lab-Peer</text>
+  <text x="450" y="268" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Private Link</text>
+  
+  <line x1="190" y1="175" x2="375" y2="230" stroke="#9b59b6" stroke-width="2"/>
+  <polygon points="370,225 380,230 370,235" fill="#9b59b6"/>
+  
+  <line x1="520" y1="230" x2="680" y2="175" stroke="#9b59b6" stroke-width="2"/>
+  <polygon points="675,170 685,175 675,180" fill="#9b59b6"/>
+  
+  <rect x="30" y="550" width="840" height="40" fill="#ecf0f1" stroke="#bdc3c7" rx="5"/>
+  <text x="450" y="572" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Private connectivity via AWS backbone  No internet exposure, No NAT, Complete visibility with Flow Logs</text>
+</svg>

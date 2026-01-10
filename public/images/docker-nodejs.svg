@@ -1,0 +1,75 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">Docker + Node.js Architecture</text>
+  
+  <!-- Host Machine -->
+  <rect x="30" y="70" width="740" height="480" fill="#ecf0f1" stroke="#2c3e50" stroke-width="3" rx="10"/>
+  <text x="50" y="95" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Host Machine</text>
+  
+  <!-- Docker Engine -->
+  <rect x="60" y="110" width="680" height="420" fill="#0db7ed" stroke="#2c3e50" stroke-width="2" rx="8"/>
+  <text x="80" y="135" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Docker Engine</text>
+  
+  <!-- Container 1 -->
+  <rect x="90" y="160" width="200" height="340" fill="#2c3e50" stroke="#fff" stroke-width="2" rx="5"/>
+  <text x="190" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Container 1</text>
+  
+  <rect x="110" y="200" width="160" height="60" fill="#68a063" stroke="#fff" stroke-width="2" rx="3"/>
+  <text x="190" y="225" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Node.js App</text>
+  <text x="190" y="245" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Express Server</text>
+  
+  <rect x="110" y="280" width="160" height="50" fill="#95a5a6" stroke="#fff" stroke-width="2" rx="3"/>
+  <text x="190" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Node.js Runtime</text>
+  <text x="190" y="320" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">v18.x</text>
+  
+  <rect x="110" y="350" width="160" height="50" fill="#7f8c8d" stroke="#fff" stroke-width="2" rx="3"/>
+  <text x="190" y="375" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Linux OS</text>
+  <text x="190" y="390" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Alpine/Ubuntu</text>
+  
+  <text x="190" y="425" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#3498db">Port: 3000</text>
+  <text x="190" y="445" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#3498db">Volume: /app</text>
+  
+  <!-- Container 2 -->
+  <rect x="320" y="160" width="200" height="340" fill="#2c3e50" stroke="#fff" stroke-width="2" rx="5"/>
+  <text x="420" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Container 2</text>
+  
+  <rect x="340" y="200" width="160" height="60" fill="#68a063" stroke="#fff" stroke-width="2" rx="3"/>
+  <text x="420" y="225" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Node.js API</text>
+  <text x="420" y="245" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">REST API</text>
+  
+  <rect x="340" y="280" width="160" height="50" fill="#95a5a6" stroke="#fff" stroke-width="2" rx="3"/>
+  <text x="420" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Node.js Runtime</text>
+  <text x="420" y="320" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">v18.x</text>
+  
+  <rect x="340" y="350" width="160" height="50" fill="#7f8c8d" stroke="#fff" stroke-width="2" rx="3"/>
+  <text x="420" y="375" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Linux OS</text>
+  <text x="420" y="390" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Alpine/Ubuntu</text>
+  
+  <text x="420" y="425" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#3498db">Port: 4000</text>
+  <text x="420" y="445" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#3498db">Volume: /api</text>
+  
+  <!-- Database Container -->
+  <rect x="550" y="160" width="170" height="340" fill="#2c3e50" stroke="#fff" stroke-width="2" rx="5"/>
+  <text x="635" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Container 3</text>
+  
+  <rect x="570" y="200" width="130" height="60" fill="#336791" stroke="#fff" stroke-width="2" rx="3"/>
+  <text x="635" y="225" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">PostgreSQL</text>
+  <text x="635" y="245" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Database</text>
+  
+  <rect x="570" y="280" width="130" height="50" fill="#95a5a6" stroke="#fff" stroke-width="2" rx="3"/>
+  <text x="635" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">PostgreSQL</text>
+  <text x="635" y="320" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">v14</text>
+  
+  <rect x="570" y="350" width="130" height="50" fill="#7f8c8d" stroke="#fff" stroke-width="2" rx="3"/>
+  <text x="635" y="375" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Linux OS</text>
+  <text x="635" y="390" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Alpine</text>
+  
+  <text x="635" y="425" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#3498db">Port: 5432</text>
+  <text x="635" y="445" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#3498db">Volume: /data</text>
+  
+  <!-- Benefits -->
+  <text x="50" y="565" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Isolated environments</text>
+  <text x="250" y="565" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Consistent deployments</text>
+  <text x="450" y="565" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Easy scaling</text>
+  <text x="620" y="565" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Portable</text>
+</svg>

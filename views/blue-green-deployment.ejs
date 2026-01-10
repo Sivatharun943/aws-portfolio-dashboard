@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue/Green Deployment with Elastic Beanstalk | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Blue/Green Deployment with AWS Elastic Beanstalk</h1>
+        <p>Implemented zero-downtime deployment strategy by cloning environments and swapping URLs for seamless traffic switching between application versions.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/blue-green.png" alt="Blue/Green Deployment Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates <strong>Blue/Green deployment</strong> strategy using <strong>AWS Elastic Beanstalk</strong>, 
+                enabling zero-downtime releases by maintaining two identical production environments.
+            </p>
+            <ul>
+                <li>Created an <strong>Elastic Beanstalk application</strong> with load-balanced, auto-scaling environment.</li>
+                <li>Deployed a sample <strong>Tomcat application</strong> to the Blue environment.</li>
+                <li>Performed <strong>standard manual re-deployment</strong> with a new version.</li>
+                <li><strong>Cloned the environment</strong> to create the Green environment.</li>
+                <li>Deployed updated application (modified index.jsp) to Green environment.</li>
+                <li>Executed <strong>URL swap</strong> to switch traffic from Blue to Green instantly.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>Blue/Green deployment maintains two identical environments:</p>
+            <ul>
+                <li><strong>Blue Environment (Production)</strong> – Currently serving live traffic with the stable version.</li>
+                <li><strong>Green Environment (Staging)</strong> – Cloned environment with the new version deployed.</li>
+                <li><strong>Elastic Load Balancer</strong> – Distributes traffic to EC2 instances in the active environment.</li>
+                <li><strong>Auto Scaling Group</strong> – Automatically scales instances based on demand.</li>
+                <li><strong>URL Swap</strong> – Instantly switches the environment URLs, redirecting traffic to Green.</li>
+                <li><strong>Rollback Capability</strong> – If issues arise, swap back to Blue environment immediately.</li>
+            </ul>
+        </div>
+
+        <!-- Implementation Steps -->
+        <div class="project-section">
+            <h3>Implementation Steps</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Created Elastic Beanstalk application with "Load Balancing, Auto-scaling" environment type.</li>
+                <li><strong>Step 2:</strong> Downloaded sample Tomcat application from AWS documentation.</li>
+                <li><strong>Step 3:</strong> Deployed the sample app to the Blue environment (original).</li>
+                <li><strong>Step 4:</strong> Used "Clone" feature to create an identical Green environment.</li>
+                <li><strong>Step 5:</strong> Modified index.jsp - changed "Congratulations" to "New version".</li>
+                <li><strong>Step 6:</strong> Zipped the modified application and deployed to Green environment.</li>
+                <li><strong>Step 7:</strong> Performed URL swap between Blue and Green environments.</li>
+                <li><strong>Step 8:</strong> Verified the original URL now shows the new version.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Understood <strong>Blue/Green deployment</strong> pattern for zero-downtime releases.</li>
+                <li>Used Elastic Beanstalk's <strong>Clone</strong> feature to duplicate environments.</li>
+                <li>Performed <strong>URL swap</strong> for instant traffic switching.</li>
+                <li>Learned how <strong>Load Balancer + Auto Scaling</strong> work together in Beanstalk.</li>
+                <li>Practiced <strong>application versioning</strong> and deployment management.</li>
+                <li>Understood the importance of <strong>rollback strategies</strong> in production deployments.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                Blue/Green deployment is a production-ready strategy for critical applications:
+            </p>
+            <ul>
+                <li>Always <strong>test the Green environment</strong> thoroughly before URL swap.</li>
+                <li>Use <strong>health checks</strong> to ensure the new version is healthy.</li>
+                <li>Keep the <strong>Blue environment running</strong> temporarily for quick rollback.</li>
+                <li>Consider <strong>database migration strategies</strong> for schema changes.</li>
+                <li>Use <strong>Route 53 weighted routing</strong> for gradual traffic shifting (Canary).</li>
+                <li>Clean up old environments after successful deployment to <strong>reduce costs</strong>.</li>
+                <li>Automate Blue/Green deployments using <strong>CodePipeline</strong> for CI/CD.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

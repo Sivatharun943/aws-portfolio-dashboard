@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Aggregation with OpenSearch | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Log Aggregation with AWS OpenSearch</h1>
+        <p>Built a centralized logging solution by streaming CloudWatch logs to OpenSearch for real-time visualization and analysis using Kibana dashboards.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/opensearch-logs.png" alt="OpenSearch Log Aggregation Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates <strong>centralized log aggregation</strong> using <strong>Amazon OpenSearch Service</strong> 
+                (successor to Elasticsearch), enabling powerful search and visualization of application logs.
+            </p>
+            <ul>
+                <li>Deployed infrastructure using <strong>CloudFormation</strong> (DynamoDB, Lambda, IAM).</li>
+                <li>Generated logs by invoking <strong>Lambda function</strong> with test events.</li>
+                <li>Reviewed logs in <strong>CloudWatch Log Groups</strong>.</li>
+                <li>Created an <strong>OpenSearch cluster</strong> (Elasticsearch domain).</li>
+                <li>Configured <strong>CloudWatch to OpenSearch streaming</strong> subscription.</li>
+                <li>Visualized logs using <strong>OpenSearch Dashboards</strong> (Kibana).</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The architecture implements a complete log aggregation pipeline:</p>
+            <ul>
+                <li><strong>CloudFormation Stack</strong> – Provisions DynamoDB table, Lambda function, and IAM roles.</li>
+                <li><strong>Lambda Function</strong> – Processes events and writes to DynamoDB, generating logs.</li>
+                <li><strong>DynamoDB</strong> – Stores application data from Lambda function operations.</li>
+                <li><strong>CloudWatch Logs</strong> – Automatically captures Lambda function logs.</li>
+                <li><strong>Subscription Filter</strong> – Streams logs from CloudWatch to OpenSearch.</li>
+                <li><strong>OpenSearch Service</strong> – Indexes and stores logs for search and analysis.</li>
+                <li><strong>OpenSearch Dashboards</strong> – Kibana-based UI for log visualization.</li>
+            </ul>
+        </div>
+
+        <!-- Implementation Steps -->
+        <div class="project-section">
+            <h3>Implementation Steps</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Uploaded CloudFormation template to S3 and created stack.</li>
+                <li><strong>Step 2:</strong> Tested Lambda function with PUT operation to generate logs.</li>
+                <li><strong>Step 3:</strong> Reviewed logs in CloudWatch Log Groups and Log Streams.</li>
+                <li><strong>Step 4:</strong> Created OpenSearch domain with t3.small.search instance.</li>
+                <li><strong>Step 5:</strong> Configured CloudWatch subscription to stream logs to OpenSearch.</li>
+                <li><strong>Step 6:</strong> Set filter pattern: <code>[timestamp=*Z, request_id="*-*", event]</code></li>
+                <li><strong>Step 7:</strong> Generated more events by invoking Lambda multiple times.</li>
+                <li><strong>Step 8:</strong> Created index pattern (cwl-*) in OpenSearch Stack Management.</li>
+                <li><strong>Step 9:</strong> Visualized logs in OpenSearch Discover dashboard.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Set up <strong>OpenSearch Service</strong> (managed Elasticsearch) cluster.</li>
+                <li>Configured <strong>CloudWatch to OpenSearch</strong> log streaming.</li>
+                <li>Used <strong>subscription filters</strong> to parse and forward specific log patterns.</li>
+                <li>Created <strong>index patterns</strong> for organizing log data in OpenSearch.</li>
+                <li>Navigated <strong>OpenSearch Dashboards</strong> (Kibana) for log discovery.</li>
+                <li>Understood <strong>IAM permissions</strong> required for cross-service log streaming.</li>
+                <li>Configured <strong>access policies</strong> for secure OpenSearch access.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                Centralized logging is essential for production observability:
+            </p>
+            <ul>
+                <li>Use <strong>VPC endpoints</strong> for secure OpenSearch access in production.</li>
+                <li>Configure <strong>index lifecycle policies</strong> to manage log retention and costs.</li>
+                <li>Set up <strong>CloudWatch alarms</strong> for OpenSearch cluster health.</li>
+                <li>Use <strong>fine-grained access control</strong> for multi-tenant environments.</li>
+                <li>Create <strong>dashboards and visualizations</strong> for common log patterns.</li>
+                <li>Consider <strong>OpenSearch Serverless</strong> for variable workloads.</li>
+                <li>Always <strong>delete resources</strong> after labs to avoid ongoing charges.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline as Code | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Pipeline as Code – Automated WordPress Deployment</h1>
+        <p>Implemented a fully automated CI/CD pipeline using AWS CodePipeline and CloudFormation, where both infrastructure and the pipeline itself are defined as code.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/pipeline-as-code.png" alt="Pipeline as Code Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project extends the previous WordPress-on-EC2 setup by introducing <strong>Pipeline as Code (PaC)</strong>, a DevOps concept where the entire CI/CD pipeline configuration is written and version-controlled as code.
+                The goal was to achieve complete automation — from code commit to infrastructure deployment — without any manual steps in the AWS Console.
+            </p>
+            <ul>
+                <li>Defined <strong>pipeline configuration</strong> declaratively in <code>codepipeline.yaml</code>.</li>
+                <li>Used <strong>CloudFormation</strong> to provision both the pipeline and the WordPress stack.</li>
+                <li>Integrated <strong>GitHub</strong> for source control and automated deployment triggers.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The architecture follows a complete CI/CD flow, built entirely through CloudFormation templates:</p>
+            <ul>
+                <li><strong>GitHub Repository</strong> – Stores source code, CloudFormation templates, and triggers pipeline on each commit.</li>
+                <li><strong>AWS CodePipeline</strong> – Orchestrates deployment; Source stage pulls from GitHub, Deploy stage invokes CloudFormation.</li>
+                <li><strong>AWS Secrets Manager</strong> – Stores sensitive credentials such as GitHub OAuth token and database password.</li>
+                <li><strong>AWS CloudFormation</strong> – Defines and provisions infrastructure (EC2, RDS, Security Groups, etc.).</li>
+                <li><strong>AWS S3</strong> – Acts as the artifact store for CodePipeline.</li>
+                <li><strong>Amazon EC2</strong> – Hosts the WordPress web server.</li>
+                <li><strong>Amazon RDS (Optional)</strong> – Provides the backend MySQL database for WordPress.</li>
+            </ul>
+        </div>
+
+        <!-- Workflow -->
+        <div class="project-section">
+            <h3>Workflow</h3>
+            <ol>
+                <li><strong>Developer commits code</strong> → GitHub sends webhook to CodePipeline.</li>
+                <li><strong>CodePipeline Source stage</strong> pulls the latest version of the repository.</li>
+                <li><strong>Deploy stage</strong> executes CloudFormation using the <code>wordpress-app.yaml</code> template.</li>
+                <li><strong>CloudFormation</strong> provisions or updates the EC2 instance and supporting infrastructure.</li>
+                <li><strong>WordPress Application</strong> becomes available automatically at the CloudFormation output URL.</li>
+            </ol>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Understood the concept of <strong>Pipeline as Code (PaC)</strong> and how it complements Infrastructure as Code (IaC).</li>
+                <li>Gained experience in <strong>automating CI/CD pipelines</strong> using CloudFormation instead of manual setup.</li>
+                <li>Practiced secure secret handling using <strong>AWS Secrets Manager</strong>.</li>
+                <li>Learned the importance of <strong>version control</strong> and reproducibility in deployment pipelines.</li>
+                <li>Validated how a simple <strong>Git commit</strong> can trigger a full infrastructure redeployment.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <ul>
+                <li>All pipeline configurations and templates are <strong>stored as YAML</strong> in version control for traceability.</li>
+                <li><strong>IAM Roles</strong> were scoped with least privilege to improve security.</li>
+                <li>Secrets are never hardcoded; all sensitive data comes from <strong>AWS Secrets Manager</strong>.</li>
+                <li>CloudFormation templates were validated using the AWS CLI before deployment.</li>
+                <li>Stacks and S3 artifacts were cleaned up after completion to avoid unnecessary costs.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">⬅ Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
+

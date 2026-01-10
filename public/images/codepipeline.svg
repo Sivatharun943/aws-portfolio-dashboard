@@ -1,0 +1,77 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">AWS CodePipeline CI/CD Architecture</text>
+  
+  <!-- Source Stage -->
+  <rect x="50" y="100" width="140" height="80" fill="#3498db" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="120" y="125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Source</text>
+  <text x="120" y="145" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">CodeCommit</text>
+  <text x="120" y="165" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">GitHub</text>
+  
+  <!-- Build Stage -->
+  <rect x="230" y="100" width="140" height="80" fill="#e74c3c" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="300" y="125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Build</text>
+  <text x="300" y="145" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">CodeBuild</text>
+  <text x="300" y="165" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Compile &amp; Test</text>
+  
+  <!-- Test Stage -->
+  <rect x="410" y="100" width="140" height="80" fill="#f39c12" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="480" y="125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Test</text>
+  <text x="480" y="145" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">CodeBuild</text>
+  <text x="480" y="165" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">Integration Tests</text>
+  
+  <!-- Deploy Stage -->
+  <rect x="590" y="100" width="140" height="80" fill="#27ae60" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="660" y="125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Deploy</text>
+  <text x="660" y="145" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">CodeDeploy</text>
+  <text x="660" y="165" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">ECS/Beanstalk</text>
+  
+  <!-- Arrows between stages -->
+  <line x1="190" y1="140" x2="230" y2="140" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="370" y1="140" x2="410" y2="140" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="550" y1="140" x2="590" y2="140" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Supporting Services -->
+  <rect x="150" y="250" width="500" height="200" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Supporting AWS Services</text>
+  
+  <rect x="180" y="300" width="120" height="60" fill="#9b59b6" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="240" y="325" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">S3</text>
+  <text x="240" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Artifact Store</text>
+  
+  <rect x="340" y="300" width="120" height="60" fill="#e67e22" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="400" y="325" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">CloudWatch</text>
+  <text x="400" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Monitoring</text>
+  
+  <rect x="500" y="300" width="120" height="60" fill="#16a085" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="560" y="325" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">SNS</text>
+  <text x="560" y="345" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Notifications</text>
+  
+  <rect x="260" y="380" width="120" height="60" fill="#c0392b" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="320" y="405" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">IAM</text>
+  <text x="320" y="425" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Permissions</text>
+  
+  <rect x="420" y="380" width="120" height="60" fill="#2980b9" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="480" y="405" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">CloudTrail</text>
+  <text x="480" y="425" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">Audit Logs</text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2c3e50"/>
+    </marker>
+  </defs>
+  
+  <!-- Benefits -->
+  <text x="50" y="490" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Automated CI/CD pipeline</text>
+  <text x="50" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Visual workflow</text>
+  <text x="50" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Manual approval gates</text>
+  
+  <text x="300" y="490" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Parallel execution</text>
+  <text x="300" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Integration with AWS services</text>
+  <text x="300" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Custom actions support</text>
+  
+  <text x="550" y="490" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Rollback capabilities</text>
+  <text x="550" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Third-party integrations</text>
+  <text x="550" y="530" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">✓ Event-driven triggers</text>
+</svg>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS VPC Networking & Security | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>AWS VPC Networking & Security Architecture</h1>
+        <p>Built a complete VPC with public/private subnets, Internet Gateway, NAT Gateway, bastion host architecture, custom NACLs, and tested network connectivity using SSH tunneling.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/vpc-networking.png" alt="VPC Networking Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates building a <strong>production-ready VPC architecture</strong> with proper network 
+                segmentation, secure access patterns, and defense-in-depth security controls.
+            </p>
+            <ul>
+                <li>Created a <strong>VPC</strong> with custom CIDR block (10.0.0.0/16).</li>
+                <li>Built <strong>public and private subnets</strong> for network segmentation.</li>
+                <li>Attached <strong>Internet Gateway</strong> for public internet access.</li>
+                <li>Deployed <strong>NAT Gateway</strong> for secure private subnet outbound access.</li>
+                <li>Configured <strong>route tables</strong> for proper traffic routing.</li>
+                <li>Set up <strong>bastion host</strong> architecture with SSH agent forwarding.</li>
+                <li>Created <strong>custom NACLs</strong> and tested ICMP blocking.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The VPC architecture implements enterprise networking patterns:</p>
+            <ul>
+                <li><strong>VPC (10.0.0.0/16)</strong> – Private virtual network isolating all resources.</li>
+                <li><strong>Public Subnet (10.0.0.0/24)</strong> – Internet-facing resources with public IPs.</li>
+                <li><strong>Private Subnet (10.0.1.0/24)</strong> – Internal resources without public IPs.</li>
+                <li><strong>Internet Gateway</strong> – Enables public subnet to reach the internet.</li>
+                <li><strong>NAT Gateway</strong> – Allows private subnet outbound internet access securely.</li>
+                <li><strong>Public Route Table</strong> – Routes 0.0.0.0/0 → Internet Gateway.</li>
+                <li><strong>Private Route Table</strong> – Routes 0.0.0.0/0 → NAT Gateway.</li>
+                <li><strong>Bastion Host</strong> – Secure jump box for accessing private instances.</li>
+                <li><strong>Custom NACL</strong> – Subnet-level firewall for additional security.</li>
+            </ul>
+        </div>
+
+        <!-- Implementation Steps -->
+        <div class="project-section">
+            <h3>Implementation Steps</h3>
+            <ul>
+                <li><strong>Task 1:</strong> Created Lab VPC with CIDR 10.0.0.0/16.</li>
+                <li><strong>Task 2:</strong> Created public subnet (10.0.0.0/24) and private subnet (10.0.1.0/24).</li>
+                <li><strong>Task 3:</strong> Created and attached Internet Gateway to VPC.</li>
+                <li><strong>Task 4:</strong> Created public route table with route to IGW, associated with public subnet.</li>
+                <li><strong>Task 5:</strong> Created NAT Gateway in public subnet with Elastic IP.</li>
+                <li><strong>Task 6:</strong> Created private route table with route to NAT, associated with private subnet.</li>
+                <li><strong>Task 7:</strong> Launched bastion host (public) and private EC2 instance.</li>
+                <li><strong>Task 8:</strong> Tested SSH via bastion with agent forwarding, verified NAT with ping.</li>
+                <li><strong>Task 9:</strong> Created custom NACL and associated with private subnet.</li>
+                <li><strong>Task 10:</strong> Tested NACL by blocking ICMP traffic to specific IP.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Designed <strong>public vs private subnet</strong> architecture.</li>
+                <li>Configured <strong>Internet Gateway</strong> for public internet access.</li>
+                <li>Deployed <strong>NAT Gateway</strong> for secure outbound-only access.</li>
+                <li>Created <strong>route tables</strong> with proper associations.</li>
+                <li>Implemented <strong>bastion host</strong> pattern with SSH agent forwarding.</li>
+                <li>Used <strong>NACLs</strong> for subnet-level traffic control.</li>
+                <li>Practiced <strong>defense in depth</strong> (Security Groups + NACLs).</li>
+                <li>Tested connectivity with <strong>ping and SSH tunneling</strong>.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                This project covers enterprise VPC design patterns:
+            </p>
+            <ul>
+                <li>Always place <strong>databases and backend servers</strong> in private subnets.</li>
+                <li>Use <strong>NAT Gateway</strong> (not NAT Instance) for production workloads.</li>
+                <li>Implement <strong>bastion hosts</strong> or AWS Systems Manager for secure access.</li>
+                <li>Apply <strong>least-privilege Security Groups</strong> at instance level.</li>
+                <li>Use <strong>NACLs</strong> as an additional layer for subnet-level control.</li>
+                <li>Enable <strong>VPC Flow Logs</strong> for network traffic monitoring.</li>
+                <li>Consider <strong>VPC Endpoints</strong> for private access to AWS services.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

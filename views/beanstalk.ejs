@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elastic Beanstalk Deployment | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Application Deployment with Elastic Beanstalk</h1>
+        <p>Deployed and managed a sample Tomcat application using AWS Elastic Beanstalk (PaaS).</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/beanstalk.png" alt="Elastic Beanstalk Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                In this project, I used <strong>AWS Elastic Beanstalk</strong> to deploy a 
+                <strong>sample Tomcat application</strong>. Elastic Beanstalk automates provisioning, scaling, 
+                and monitoring, allowing developers to focus on code while AWS manages infrastructure.
+            </p>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>Key components involved in this deployment:</p>
+            <ul>
+                <li><strong>Elastic Beanstalk</strong> – Service that orchestrates resources for app deployment.</li>
+                <li><strong>EC2 Instance(s)</strong> – Run the Tomcat application.</li>
+                <li><strong>Security Group</strong> – Controls inbound access (HTTP/SSH).</li>
+                <li><strong>IAM Role</strong> – Grants EC2 instances permissions (e.g., AWSElasticBeanstalkWebTier).</li>
+                <li><strong>Load Balancer (optional)</strong> – Distributes traffic in production setups.</li>
+                <li><strong>CloudWatch</strong> – Monitors application health and logs.</li>
+                <li><strong>User</strong> – Accesses the Tomcat app via public URL provided by Elastic Beanstalk.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Understood how Elastic Beanstalk abstracts infrastructure management.</li>
+                <li>Configured IAM roles for Elastic Beanstalk environments.</li>
+                <li>Learned how Beanstalk provisions EC2, Security Groups, and monitoring automatically.</li>
+                <li>Experienced deploying an app without writing CloudFormation or Terraform code.</li>
+                <li>Monitored health status and accessed app logs directly from Beanstalk.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section alt-bg">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                While the lab deployed a sample app with default settings, production setups often require:
+            </p>
+            <ul>
+                <li>Custom domains with Route 53 and HTTPS certificates.</li>
+                <li>Multiple Availability Zones with Auto Scaling for high availability.</li>
+                <li>Dedicated database backend (Amazon RDS) instead of local DB.</li>
+                <li>CI/CD integration with CodePipeline or GitHub Actions for automated deployments.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">⬅ Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
+

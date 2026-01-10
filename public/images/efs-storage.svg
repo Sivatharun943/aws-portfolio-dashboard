@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="850" height="550" xmlns="http://www.w3.org/2000/svg">
+  <rect width="850" height="550" fill="#f8f9fa"/>
+  <text x="425" y="35" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">EFS Shared Storage</text>
+  
+  <rect x="50" y="70" width="550" height="280" fill="#fff3e0" stroke="#FF9900" stroke-width="2" rx="8"/>
+  <text x="325" y="95" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#FF9900">AWS VPC</text>
+  
+  <rect x="80" y="120" width="150" height="200" fill="#e3f2fd" stroke="#3498db" stroke-width="2" rx="5"/>
+  <text x="155" y="145" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#3498db">Availability Zone A</text>
+  
+  <rect x="100" y="165" width="110" height="60" fill="#3498db" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="155" y="190" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">EC2 Instance</text>
+  <text x="155" y="210" font-family="Arial" font-size="8" text-anchor="middle" fill="white">EFS Client SG</text>
+  
+  <rect x="100" y="240" width="110" height="50" fill="#27ae60" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="155" y="262" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Mount Target</text>
+  <text x="155" y="278" font-family="Arial" font-size="7" text-anchor="middle" fill="white">EFS Mount SG</text>
+  
+  <rect x="260" y="120" width="150" height="200" fill="#e8f5e9" stroke="#27ae60" stroke-width="2" rx="5"/>
+  <text x="335" y="145" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#27ae60">Availability Zone B</text>
+  
+  <rect x="280" y="165" width="110" height="60" fill="#3498db" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="335" y="190" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">EC2 Instance</text>
+  <text x="335" y="210" font-family="Arial" font-size="8" text-anchor="middle" fill="white">EFS Client SG</text>
+  
+  <rect x="280" y="240" width="110" height="50" fill="#27ae60" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="335" y="262" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Mount Target</text>
+  <text x="335" y="278" font-family="Arial" font-size="7" text-anchor="middle" fill="white">EFS Mount SG</text>
+  
+  <rect x="440" y="120" width="140" height="200" fill="#fce4ec" stroke="#e91e63" stroke-width="2" rx="5"/>
+  <text x="510" y="145" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#e91e63">Availability Zone C</text>
+  
+  <rect x="455" y="240" width="110" height="50" fill="#27ae60" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="510" y="262" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Mount Target</text>
+  <text x="510" y="278" font-family="Arial" font-size="7" text-anchor="middle" fill="white">EFS Mount SG</text>
+  
+  <rect x="630" y="150" width="190" height="120" fill="#9b59b6" stroke="#2c3e50" stroke-width="2" rx="8"/>
+  <text x="725" y="180" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Amazon EFS</text>
+  <text x="725" y="200" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Elastic File System</text>
+  <text x="725" y="225" font-family="Arial" font-size="8" text-anchor="middle" fill="white">fs-xxx.efs.region.amazonaws.com</text>
+  <text x="725" y="245" font-family="Arial" font-size="8" text-anchor="middle" fill="white">NFS v4.1 Protocol</text>
+  <text x="725" y="260" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Port 2049</text>
+  
+  <line x1="210" y1="265" x2="625" y2="210" stroke="#9b59b6" stroke-width="2"/>
+  <line x1="390" y1="265" x2="625" y2="210" stroke="#9b59b6" stroke-width="2"/>
+  <line x1="565" y1="265" x2="625" y2="210" stroke="#9b59b6" stroke-width="2"/>
+  
+  <line x1="155" y1="225" x2="155" y2="235" stroke="#2c3e50" stroke-width="2"/>
+  <polygon points="150,235 155,245 160,235" fill="#2c3e50"/>
+  
+  <line x1="335" y1="225" x2="335" y2="235" stroke="#2c3e50" stroke-width="2"/>
+  <polygon points="330,235 335,245 340,235" fill="#2c3e50"/>
+  
+  <rect x="630" y="300" width="190" height="70" fill="#e74c3c" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="725" y="325" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">CloudWatch</text>
+  <text x="725" y="345" font-family="Arial" font-size="8" text-anchor="middle" fill="white">PermittedThroughput</text>
+  <text x="725" y="360" font-family="Arial" font-size="8" text-anchor="middle" fill="white">DataWriteIOBytes</text>
+  
+  <line x1="725" y1="270" x2="725" y2="295" stroke="#e74c3c" stroke-width="2"/>
+  <polygon points="720,290 725,300 730,290" fill="#e74c3c"/>
+  
+  <rect x="50" y="390" width="770" height="140" fill="#ecf0f1" stroke="#bdc3c7" rx="5"/>
+  <text x="435" y="415" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Implementation Flow</text>
+  <text x="70" y="445" font-family="Arial" font-size="9" fill="#2c3e50">1. Create EFS Mount Target SG (allow port 2049)</text>
+  <text x="70" y="465" font-family="Arial" font-size="9" fill="#2c3e50">2. Create EFS file system with mount targets in each AZ</text>
+  <text x="70" y="485" font-family="Arial" font-size="9" fill="#2c3e50">3. Connect to EC2 via Session Manager</text>
+  <text x="350" y="445" font-family="Arial" font-size="9" fill="#2c3e50">4. Install amazon-efs-utils package</text>
+  <text x="350" y="465" font-family="Arial" font-size="9" fill="#2c3e50">5. Mount EFS: mount -t nfs4 fs-xxx:/ /efs</text>
+  <text x="350" y="485" font-family="Arial" font-size="9" fill="#2c3e50">6. Run FIO benchmark (10GB, 200 ops)</text>
+  <text x="620" y="445" font-family="Arial" font-size="9" fill="#27ae60" font-weight="bold">7. Monitor CloudWatch metrics</text>
+  <text x="620" y="465" font-family="Arial" font-size="9" fill="#27ae60" font-weight="bold">8. Calculate write throughput</text>
+</svg>

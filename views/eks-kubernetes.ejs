@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Orchestration with AWS EKS | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Container Orchestration with AWS EKS & Kubernetes</h1>
+        <p>Deployed a microservices-based retail application on Amazon EKS cluster using Terraform, and exposed it externally using AWS Network Load Balancer.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/eks-kubernetes.png" alt="EKS Kubernetes Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates <strong>container orchestration</strong> using <strong>Amazon EKS</strong> (Elastic Kubernetes Service), 
+                AWS's managed Kubernetes platform. A multi-microservice retail application was deployed and exposed to the internet.
+            </p>
+            <ul>
+                <li>Set up <strong>Cloud9 IDE</strong> environment using CloudFormation.</li>
+                <li>Provisioned <strong>EKS cluster</strong> using Terraform (Infrastructure as Code).</li>
+                <li>Deployed <strong>6 microservices</strong>: UI, Catalog, Carts, Checkout, Orders, Assets.</li>
+                <li>Configured <strong>Kubernetes deployments, services, and namespaces</strong>.</li>
+                <li>Exposed the application using <strong>AWS Network Load Balancer</strong>.</li>
+                <li>Scaled pods dynamically using <strong>kubectl scale</strong> commands.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The architecture follows a microservices pattern deployed on Kubernetes:</p>
+            <ul>
+                <li><strong>Amazon EKS</strong> – Managed Kubernetes control plane handling orchestration.</li>
+                <li><strong>Worker Nodes (EC2)</strong> – Run containerized microservices as pods.</li>
+                <li><strong>Microservices</strong> – UI, Catalog, Carts, Checkout, Orders, Assets - each in separate namespaces.</li>
+                <li><strong>Persistent Storage</strong> – MySQL, DynamoDB, Redis for data persistence.</li>
+                <li><strong>RabbitMQ</strong> – Message broker for async communication between services.</li>
+                <li><strong>ClusterIP Services</strong> – Internal communication between microservices.</li>
+                <li><strong>Network Load Balancer</strong> – Exposes UI service to external traffic.</li>
+                <li><strong>Terraform</strong> – Provisions VPC, EKS cluster, and node groups.</li>
+            </ul>
+        </div>
+
+        <!-- Implementation Steps -->
+        <div class="project-section">
+            <h3>Implementation Steps</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Launched Cloud9 IDE using CloudFormation template.</li>
+                <li><strong>Step 2:</strong> Downloaded Terraform configs and ran <code>terraform apply</code> to create EKS cluster.</li>
+                <li><strong>Step 3:</strong> Configured kubectl to connect to EKS using <code>aws eks update-kubeconfig</code>.</li>
+                <li><strong>Step 4:</strong> Deployed Catalog microservice using <code>kubectl apply -k</code>.</li>
+                <li><strong>Step 5:</strong> Scaled Catalog pods to 3 replicas using <code>kubectl scale</code>.</li>
+                <li><strong>Step 6:</strong> Deployed all remaining microservices (UI, Carts, Checkout, Orders, Assets).</li>
+                <li><strong>Step 7:</strong> Installed AWS Load Balancer Controller and created NLB.</li>
+                <li><strong>Step 8:</strong> Accessed the retail application via NLB external URL.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Provisioned <strong>EKS cluster</strong> using Terraform for reproducible infrastructure.</li>
+                <li>Understood Kubernetes concepts: <strong>Pods, Deployments, Services, Namespaces</strong>.</li>
+                <li>Used <strong>Kustomize</strong> for managing Kubernetes manifests.</li>
+                <li>Configured <strong>kubectl</strong> to interact with EKS cluster.</li>
+                <li>Deployed <strong>StatefulSets</strong> for databases (MySQL, RabbitMQ).</li>
+                <li>Exposed services using <strong>ClusterIP</strong> (internal) and <strong>LoadBalancer</strong> (external).</li>
+                <li>Scaled applications horizontally using <strong>replica scaling</strong>.</li>
+                <li>Cleaned up resources using <strong>terraform destroy</strong> to avoid costs.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                This project demonstrates production-ready container orchestration patterns:
+            </p>
+            <ul>
+                <li>Use <strong>separate namespaces</strong> for each microservice for isolation.</li>
+                <li>Implement <strong>resource limits</strong> on pods to prevent resource exhaustion.</li>
+                <li>Use <strong>Horizontal Pod Autoscaler (HPA)</strong> for automatic scaling.</li>
+                <li>Configure <strong>health checks</strong> (liveness/readiness probes) for reliability.</li>
+                <li>Use <strong>Ingress controllers</strong> for advanced routing and SSL termination.</li>
+                <li>Store secrets in <strong>AWS Secrets Manager</strong> or Kubernetes Secrets.</li>
+                <li>Always run <strong>terraform destroy</strong> after labs to avoid ongoing charges.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

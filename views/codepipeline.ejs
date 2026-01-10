@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress CI/CD with CodePipeline | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css"> <!-- Add project-specific styles -->
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>WordPress Deployment with AWS CodePipeline & CloudFormation</h1>
+        <p>Automated WordPress deployment using a CI/CD pipeline connected to GitHub, powered by AWS CodePipeline and CloudFormation.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/wordpress-pipeline.png" alt="WordPress CI/CD Pipeline Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates a <strong>Continuous Integration / Continuous Deployment (CI/CD)</strong> workflow for WordPress on AWS:
+            </p>
+            <ul>
+                <li><strong>Source:</strong> GitHub repository with WordPress and CloudFormation templates.</li>
+                <li><strong>Pipeline:</strong> AWS CodePipeline automating deployment on every new commit.</li>
+                <li><strong>Infrastructure:</strong> AWS CloudFormation provisioning EC2 instance, MySQL DB, Apache, PHP, and WordPress.</li>
+            </ul>
+            <p>The goal was to achieve <strong>automated, repeatable deployments</strong> without manual intervention.</p>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The workflow integrates GitHub with AWS services:</p>
+            <ul>
+                <li><strong>GitHub</strong> – Stores the WordPress application code and infrastructure templates.</li>
+                <li><strong>AWS CodePipeline</strong> – Monitors GitHub for changes and orchestrates deployment.</li>
+                <li><strong>S3 Bucket</strong> – Stores artifacts from each pipeline run.</li>
+                <li><strong>AWS CloudFormation</strong> – Reads the <code>wordpress-app.yaml</code> template and provisions resources.</li>
+                <li><strong>EC2 Instance</strong> – Hosts Apache, PHP, MySQL, and WordPress.</li>
+                <li><strong>Security Group</strong> – Allows HTTP (80) and restricted SSH (22) access.</li>
+                <li><strong>Outputs</strong> – Provides the WordPress site URL for immediate access.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Set up <strong>GitHub → AWS CodePipeline</strong> integration with webhooks.</li>
+                <li>Created IAM roles for CodePipeline and CloudFormation with correct permissions.</li>
+                <li>Automated deployment of WordPress using CloudFormation templates.</li>
+                <li>Observed how CodePipeline fetches changes from GitHub and redeploys automatically.</li>
+                <li>Understood the importance of <strong>Infrastructure as Code</strong> and CI/CD in cloud projects.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section alt-bg">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                This project deployed WordPress on a single EC2 instance for learning purposes. In production:
+            </p>
+            <ul>
+                <li>Databases should run on <strong>Amazon RDS</strong> instead of local MySQL for scalability.</li>
+                <li>Static media files can be served from <strong>S3 + CloudFront</strong> for performance.</li>
+                <li><strong>Auto Scaling</strong> with Load Balancers improves high availability.</li>
+                <li>Restrict SSH access to specific IP addresses only.</li>
+                <li>Use separate pipelines for <strong>staging and production</strong> environments.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">⬅ Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
+

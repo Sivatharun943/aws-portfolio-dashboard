@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognito Authentication & Authorization | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>Cognito Authentication & Authorization</h1>
+        <p>Secured a Birds web application using Amazon Cognito. Implemented user pool authentication for protected pages and identity pool authorization for DynamoDB access.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/cognito-auth.png" alt="Cognito Authentication Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates implementing <strong>complete authentication and authorization</strong> using 
+                <strong>Amazon Cognito</strong> for a web application with protected pages and database access.
+            </p>
+            <ul>
+                <li>Created an <strong>Amazon Cognito User Pool</strong> for user authentication.</li>
+                <li>Added users to the user pool and configured sign-up/sign-in.</li>
+                <li>Integrated the <strong>Cognito managed UI</strong> with the Birds application.</li>
+                <li>Created an <strong>Amazon Cognito Identity Pool</strong> for authorization.</li>
+                <li>Configured <strong>IAM roles</strong> for DynamoDB access.</li>
+                <li>Implemented <strong>access token validation</strong> and storage in browser local storage.</li>
+                <li>Enabled <strong>temporary AWS credentials</strong> for DynamoDB queries.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The Cognito architecture implements multi-layer security:</p>
+            <ul>
+                <li><strong>Cloud9 Instance</strong> – Hosts the Node.js Birds application server.</li>
+                <li><strong>S3 Bucket</strong> – Serves static website content with CloudFront distribution.</li>
+                <li><strong>CloudFront</strong> – CDN for fast content delivery and HTTPS.</li>
+                <li><strong>Cognito User Pool</strong> – Manages user authentication and access tokens.</li>
+                <li><strong>Cognito Managed UI</strong> – Handles sign-up, sign-in, and token management.</li>
+                <li><strong>Cognito Identity Pool</strong> – Exchanges tokens for temporary AWS credentials.</li>
+                <li><strong>IAM Roles</strong> – Define permissions for DynamoDB access.</li>
+                <li><strong>DynamoDB Table</strong> – Stores bird sightings data.</li>
+                <li><strong>Local Storage</strong> – Browser stores access tokens (3,600 second expiration).</li>
+            </ul>
+        </div>
+
+        <!-- Implementation Steps -->
+        <div class="project-section">
+            <h3>Implementation Steps</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Created Amazon Cognito User Pool with sign-up/sign-in configuration.</li>
+                <li><strong>Step 2:</strong> Added users to the user pool (students and administrators).</li>
+                <li><strong>Step 3:</strong> Configured Cognito App Client for the Birds application.</li>
+                <li><strong>Step 4:</strong> Integrated Cognito SDK into the Node.js application.</li>
+                <li><strong>Step 5:</strong> Updated protected pages (sightings, reporting, admin) to require authentication.</li>
+                <li><strong>Step 6:</strong> Implemented token validation and local storage management.</li>
+                <li><strong>Step 7:</strong> Created Amazon Cognito Identity Pool for authorization.</li>
+                <li><strong>Step 8:</strong> Configured IAM roles with DynamoDB permissions.</li>
+                <li><strong>Step 9:</strong> Updated admin page to query DynamoDB using temporary credentials.</li>
+                <li><strong>Step 10:</strong> Tested authentication flow and DynamoDB access.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Created and configured <strong>Cognito User Pools</strong> for authentication.</li>
+                <li>Implemented <strong>Cognito managed UI</strong> for sign-up/sign-in.</li>
+                <li>Managed <strong>access tokens</strong> in browser local storage.</li>
+                <li>Created <strong>Cognito Identity Pools</strong> for authorization.</li>
+                <li>Configured <strong>IAM roles</strong> for service permissions.</li>
+                <li>Exchanged <strong>tokens for temporary AWS credentials</strong>.</li>
+                <li>Implemented <strong>role-based access control</strong> (student vs admin).</li>
+                <li>Secured <strong>DynamoDB queries</strong> with Cognito authorization.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                Cognito provides enterprise-grade authentication and authorization:
+            </p>
+            <ul>
+                <li>Use <strong>User Pools</strong> for user authentication and management.</li>
+                <li>Use <strong>Identity Pools</strong> for authorization to AWS services.</li>
+                <li>Store <strong>tokens securely</strong> in browser local storage or cookies.</li>
+                <li>Implement <strong>token refresh</strong> before expiration (default 3,600 seconds).</li>
+                <li>Use <strong>MFA (Multi-Factor Authentication)</strong> for enhanced security.</li>
+                <li>Configure <strong>password policies</strong> and complexity requirements.</li>
+                <li>Enable <strong>CloudTrail logging</strong> for audit trails.</li>
+                <li>Use <strong>least-privilege IAM roles</strong> for service access.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

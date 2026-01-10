@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="600" fill="#f8f9fa"/>
+  <text x="450" y="35" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">EKS Container Orchestration</text>
+  
+  <rect x="30" y="200" width="100" height="70" fill="#34495e" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="80" y="230" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Users</text>
+  <text x="80" y="250" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Browser</text>
+  
+  <rect x="160" y="200" width="100" height="70" fill="#9b59b6" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="210" y="230" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Network</text>
+  <text x="210" y="248" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Load Balancer</text>
+  
+  <rect x="290" y="60" width="580" height="480" fill="#fff3e0" stroke="#FF9900" stroke-width="2" rx="8"/>
+  <text x="580" y="85" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#FF9900">Amazon EKS Cluster</text>
+  
+  <rect x="310" y="105" width="540" height="120" fill="#e3f2fd" stroke="#3498db" stroke-width="2" rx="5"/>
+  <text x="580" y="125" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#3498db">Worker Node 1</text>
+  
+  <rect x="325" y="140" width="75" height="45" fill="#3498db" rx="3"/>
+  <text x="362" y="160" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">UI Pod</text>
+  <text x="362" y="175" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Frontend</text>
+  
+  <rect x="410" y="140" width="75" height="45" fill="#27ae60" rx="3"/>
+  <text x="447" y="160" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Catalog</text>
+  <text x="447" y="175" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Products</text>
+  
+  <rect x="495" y="140" width="75" height="45" fill="#e74c3c" rx="3"/>
+  <text x="532" y="160" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Carts</text>
+  <text x="532" y="175" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Shopping</text>
+  
+  <rect x="580" y="140" width="75" height="45" fill="#f39c12" rx="3"/>
+  <text x="617" y="160" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Checkout</text>
+  <text x="617" y="175" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Payment</text>
+  
+  <rect x="665" y="140" width="75" height="45" fill="#9b59b6" rx="3"/>
+  <text x="702" y="160" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Orders</text>
+  <text x="702" y="175" font-family="Arial" font-size="8" text-anchor="middle" fill="white">History</text>
+  
+  <rect x="750" y="140" width="75" height="45" fill="#1abc9c" rx="3"/>
+  <text x="787" y="160" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Assets</text>
+  <text x="787" y="175" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Images</text>
+  
+  <text x="580" y="210" font-family="Arial" font-size="10" text-anchor="middle" fill="#3498db">Microservices Pods</text>
+  
+  <rect x="310" y="240" width="540" height="90" fill="#fce4ec" stroke="#e91e63" stroke-width="2" rx="5"/>
+  <text x="580" y="260" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#e91e63">Data Layer</text>
+  
+  <rect x="340" y="275" width="90" height="40" fill="#e91e63" rx="3"/>
+  <text x="385" y="300" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">MySQL</text>
+  
+  <rect x="450" y="275" width="90" height="40" fill="#e91e63" rx="3"/>
+  <text x="495" y="300" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">DynamoDB</text>
+  
+  <rect x="560" y="275" width="90" height="40" fill="#e91e63" rx="3"/>
+  <text x="605" y="300" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Redis</text>
+  
+  <rect x="670" y="275" width="90" height="40" fill="#e91e63" rx="3"/>
+  <text x="715" y="300" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">RabbitMQ</text>
+  
+  <rect x="310" y="350" width="250" height="80" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="5"/>
+  <text x="435" y="375" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#4caf50">Kubernetes Services</text>
+  <text x="435" y="395" font-family="Arial" font-size="9" text-anchor="middle" fill="#2c3e50">ClusterIP - Internal</text>
+  <text x="435" y="410" font-family="Arial" font-size="9" text-anchor="middle" fill="#2c3e50">LoadBalancer - External</text>
+  
+  <rect x="600" y="350" width="250" height="80" fill="#fff8e1" stroke="#ff9800" stroke-width="2" rx="5"/>
+  <text x="725" y="375" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#ff9800">Infrastructure</text>
+  <text x="725" y="395" font-family="Arial" font-size="9" text-anchor="middle" fill="#2c3e50">Terraform - IaC</text>
+  <text x="725" y="410" font-family="Arial" font-size="9" text-anchor="middle" fill="#2c3e50">Cloud9 IDE</text>
+  
+  <line x1="130" y1="235" x2="155" y2="235" stroke="#2c3e50" stroke-width="2"/>
+  <polygon points="155,230 165,235 155,240" fill="#2c3e50"/>
+  
+  <line x1="260" y1="235" x2="285" y2="235" stroke="#2c3e50" stroke-width="2"/>
+  <polygon points="285,230 295,235 285,240" fill="#2c3e50"/>
+  
+  <rect x="30" y="480" width="840" height="100" fill="#ecf0f1" stroke="#bdc3c7" rx="5"/>
+  <text x="450" y="505" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Deployment Flow</text>
+  <text x="50" y="530" font-family="Arial" font-size="10" fill="#2c3e50">1. Terraform provisions EKS cluster and VPC</text>
+  <text x="50" y="550" font-family="Arial" font-size="10" fill="#2c3e50">2. kubectl applies Kubernetes manifests</text>
+  <text x="350" y="530" font-family="Arial" font-size="10" fill="#2c3e50">3. Pods deployed across worker nodes</text>
+  <text x="350" y="550" font-family="Arial" font-size="10" fill="#2c3e50">4. NLB exposes UI to internet</text>
+  <text x="620" y="530" font-family="Arial" font-size="10" fill="#2c3e50">5. Users access retail app via NLB URL</text>
+  <text x="620" y="550" font-family="Arial" font-size="10" fill="#2c3e50">6. terraform destroy cleans up resources</text>
+</svg>

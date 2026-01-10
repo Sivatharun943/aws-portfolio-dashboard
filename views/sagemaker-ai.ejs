@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Inference with SageMaker | Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/project.css">
+</head>
+<body class="project-page">
+    <!-- Hero Banner -->
+    <section class="project-hero">
+        <h1>AI Model Inference with SageMaker & Serverless Architecture</h1>
+        <p>Deployed a machine learning model using Amazon SageMaker JumpStart and created a serverless API with Lambda and API Gateway for real-time model inference.</p>
+    </section>
+
+    <div class="project-details">
+        <!-- Diagram -->
+        <div class="center">
+            <img src="/images/sagemaker-ai.png" alt="SageMaker AI Architecture Diagram" class="project-diagram">
+        </div>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h3>Project Overview</h3>
+            <p>
+                This project demonstrates how to deploy a <strong>machine learning model</strong> using <strong>Amazon SageMaker JumpStart</strong> 
+                and expose it through a <strong>serverless API</strong> for real-time inference.
+            </p>
+            <ul>
+                <li>Deployed a Foundation Model (Meta Llama 2) using <strong>SageMaker JumpStart</strong>.</li>
+                <li>Created a <strong>Lambda function</strong> to invoke the SageMaker model endpoint.</li>
+                <li>Set up <strong>API Gateway</strong> as a REST API to expose the Lambda function.</li>
+                <li>Tested the end-to-end flow using <strong>cURL/Postman</strong> for inference requests.</li>
+                <li>Implemented proper <strong>IAM roles</strong> for secure endpoint invocation.</li>
+            </ul>
+        </div>
+
+        <!-- Architecture -->
+        <div class="project-section alt-bg">
+            <h3>Architecture Explanation</h3>
+            <p>The architecture follows a serverless pattern for invoking ML models:</p>
+            <ul>
+                <li><strong>Client (cURL/Postman)</strong> – Sends HTTP POST requests with prompts to the API.</li>
+                <li><strong>Amazon API Gateway</strong> – REST API that receives requests and routes them to Lambda. Provides a secure entry point and seals the backend.</li>
+                <li><strong>AWS Lambda</strong> – Parses the request, formats the payload, and invokes the SageMaker endpoint using Boto3 SDK.</li>
+                <li><strong>Amazon SageMaker Endpoint</strong> – Hosts the deployed ML model and performs inference.</li>
+                <li><strong>SageMaker JumpStart</strong> – Provides pre-built Foundation Models for quick deployment.</li>
+                <li><strong>IAM Roles</strong> – Grants Lambda permission to invoke the SageMaker endpoint.</li>
+            </ul>
+        </div>
+
+        <!-- Implementation Steps -->
+        <div class="project-section">
+            <h3>Implementation Steps</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Created a SageMaker Domain and opened SageMaker Studio.</li>
+                <li><strong>Step 2:</strong> Deployed Meta Llama 2 7B model from JumpStart with default settings.</li>
+                <li><strong>Step 3:</strong> Created a Lambda function with Python runtime.</li>
+                <li><strong>Step 4:</strong> Added IAM policy for <code>sagemaker:InvokeEndpoint</code> permission.</li>
+                <li><strong>Step 5:</strong> Configured environment variable <code>ENDPOINT_NAME</code> with the SageMaker endpoint.</li>
+                <li><strong>Step 6:</strong> Created REST API in API Gateway and linked it to Lambda.</li>
+                <li><strong>Step 7:</strong> Tested with cURL sending JSON payload with prompts.</li>
+            </ul>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="project-section alt-bg">
+            <h3>Key Learnings</h3>
+            <ul>
+                <li>Deployed Foundation Models using <strong>SageMaker JumpStart</strong> without training from scratch.</li>
+                <li>Used <strong>Boto3 sagemaker-runtime</strong> to invoke model endpoints programmatically.</li>
+                <li>Configured <strong>API Gateway + Lambda</strong> for serverless ML inference.</li>
+                <li>Understood the importance of <strong>IAM policies</strong> for secure model access.</li>
+                <li>Learned how to structure <strong>request/response payloads</strong> for LLM models.</li>
+                <li>Implemented <strong>CORS headers</strong> for cross-origin API access.</li>
+            </ul>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="project-section">
+            <h3>Notes & Best Practices</h3>
+            <p>
+                This project demonstrates a production-ready pattern for ML model inference:
+            </p>
+            <ul>
+                <li>Use <strong>API Gateway authentication</strong> (API keys, IAM, Cognito) for production APIs.</li>
+                <li>Implement <strong>request throttling</strong> to control costs and prevent abuse.</li>
+                <li>Monitor endpoint usage with <strong>CloudWatch metrics</strong> and set up alarms.</li>
+                <li>Consider <strong>SageMaker Serverless Inference</strong> for cost optimization with sporadic traffic.</li>
+                <li>Use <strong>Lambda environment variables</strong> for endpoint names to enable easy updates.</li>
+                <li>Clean up SageMaker endpoints when not in use to avoid ongoing charges.</li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <a href="/" class="btn">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

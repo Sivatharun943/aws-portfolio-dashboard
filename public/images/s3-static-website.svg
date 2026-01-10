@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="600" fill="#f8f9fa"/>
+  <text x="450" y="35" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">S3 Static Website</text>
+  
+  <rect x="30" y="180" width="90" height="70" fill="#34495e" stroke="#2c3e50" stroke-width="2" rx="5"/>
+  <text x="75" y="210" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Users</text>
+  <text x="75" y="230" font-family="Arial" font-size="9" text-anchor="middle" fill="white">Browser</text>
+  
+  <rect x="160" y="100" width="200" height="230" fill="#e8f5e9" stroke="#27ae60" stroke-width="2" rx="8"/>
+  <text x="260" y="125" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#27ae60">Primary Region (us-east-1)</text>
+  
+  <rect x="180" y="145" width="160" height="80" fill="#27ae60" stroke="#2c3e50" stroke-width="1" rx="5"/>
+  <text x="260" y="170" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="white">S3 Bucket</text>
+  <text x="260" y="188" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Static Website Hosting</text>
+  <text x="260" y="203" font-family="Arial" font-size="7" text-anchor="middle" fill="white">index.html | style.css | images/</text>
+  <text x="260" y="218" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Versioning Enabled</text>
+  
+  <rect x="180" y="240" width="70" height="40" fill="#3498db" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="215" y="257" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle" fill="white">Lifecycle</text>
+  <text x="215" y="270" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Rules</text>
+  
+  <rect x="260" y="240" width="80" height="40" fill="#9b59b6" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="300" y="257" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle" fill="white">Bucket</text>
+  <text x="300" y="270" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Policy</text>
+  
+  <rect x="400" y="100" width="180" height="130" fill="#fff3e0" stroke="#FF9900" stroke-width="2" rx="8"/>
+  <text x="490" y="125" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#FF9900">Backup Region</text>
+  
+  <rect x="420" y="145" width="140" height="60" fill="#FF9900" stroke="#2c3e50" stroke-width="1" rx="5"/>
+  <text x="490" y="170" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Replica Bucket</text>
+  <text x="490" y="188" font-family="Arial" font-size="8" text-anchor="middle" fill="white">Cross-Region Replication</text>
+  
+  <rect x="620" y="80" width="250" height="170" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="5"/>
+  <text x="745" y="105" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">Monitoring and Logging</text>
+  
+  <rect x="640" y="120" width="100" height="45" fill="#e74c3c" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="690" y="140" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Access Logs</text>
+  <text x="690" y="155" font-family="Arial" font-size="7" text-anchor="middle" fill="white">S3 Bucket</text>
+  
+  <rect x="750" y="120" width="100" height="45" fill="#9b59b6" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="800" y="140" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">CloudTrail</text>
+  <text x="800" y="155" font-family="Arial" font-size="7" text-anchor="middle" fill="white">API Events</text>
+  
+  <rect x="690" y="180" width="110" height="50" fill="#1abc9c" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="745" y="200" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">CloudWatch</text>
+  <text x="745" y="215" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Metrics and Alarms</text>
+  
+  <rect x="620" y="280" width="250" height="100" fill="#fce4ec" stroke="#e91e63" stroke-width="2" rx="5"/>
+  <text x="745" y="305" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#e91e63">Event-Driven Automation</text>
+  
+  <rect x="640" y="320" width="100" height="45" fill="#f39c12" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="690" y="340" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">Lambda</text>
+  <text x="690" y="355" font-family="Arial" font-size="7" text-anchor="middle" fill="white">On Upload Trigger</text>
+  
+  <rect x="750" y="320" width="100" height="45" fill="#e74c3c" stroke="#2c3e50" stroke-width="1" rx="3"/>
+  <text x="800" y="340" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle" fill="white">SNS</text>
+  <text x="800" y="355" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Email Alerts</text>
+  
+  <line x1="120" y1="215" x2="175" y2="185" stroke="#2c3e50" stroke-width="2"/>
+  <polygon points="170,180 180,185 170,190" fill="#2c3e50"/>
+  <text x="145" y="190" font-family="Arial" font-size="7" fill="#666">HTTP</text>
+  
+  <line x1="340" y1="175" x2="415" y2="175" stroke="#FF9900" stroke-width="2"/>
+  <polygon points="410,170 420,175 410,180" fill="#FF9900"/>
+  <text x="377" y="165" font-family="Arial" font-size="7" fill="#FF9900">CRR</text>
+  
+  <line x1="340" y1="145" x2="635" y2="145" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="340" y1="160" x2="635" y2="200" stroke="#1abc9c" stroke-width="2" stroke-dasharray="4,2"/>
+  
+  <line x1="340" y1="200" x2="635" y2="340" stroke="#f39c12" stroke-width="2"/>
+  <polygon points="630,335 640,340 630,345" fill="#f39c12"/>
+  <text x="480" y="280" font-family="Arial" font-size="7" fill="#f39c12">S3 Event Trigger</text>
+  
+  <rect x="30" y="420" width="840" height="160" fill="#ecf0f1" stroke="#bdc3c7" rx="5"/>
+  <text x="450" y="445" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Features Implemented</text>
+  <text x="50" y="475" font-family="Arial" font-size="9" fill="#2c3e50">1. Static Website Hosting with index.html</text>
+  <text x="50" y="495" font-family="Arial" font-size="9" fill="#2c3e50">2. Bucket Policy for public read access</text>
+  <text x="50" y="515" font-family="Arial" font-size="9" fill="#2c3e50">3. Versioning for file protection</text>
+  <text x="50" y="535" font-family="Arial" font-size="9" fill="#2c3e50">4. Lifecycle Rules for cost optimization</text>
+  <text x="300" y="475" font-family="Arial" font-size="9" fill="#2c3e50">5. Cross-Region Replication (DR)</text>
+  <text x="300" y="495" font-family="Arial" font-size="9" fill="#2c3e50">6. Server Access Logging</text>
+  <text x="300" y="515" font-family="Arial" font-size="9" fill="#2c3e50">7. CloudTrail API monitoring</text>
+  <text x="300" y="535" font-family="Arial" font-size="9" fill="#2c3e50">8. Lambda event automation</text>
+  <text x="550" y="475" font-family="Arial" font-size="9" fill="#27ae60" font-weight="bold">Production-Ready Architecture</text>
+  <text x="550" y="495" font-family="Arial" font-size="9" fill="#27ae60" font-weight="bold">Security + Monitoring + DR + Automation</text>
+</svg>
