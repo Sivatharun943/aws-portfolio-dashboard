@@ -38,7 +38,7 @@ body.project-page .project-details {
 
 /* Diagram - smaller + centered */
 body.project-page .project-diagram {
-  max-width: 60%;
+  max-width: 90%;
   height: auto;
   margin: 1.5rem auto;
   display: block;
@@ -115,7 +115,7 @@ body.project-page .btn:hover {
 /* Responsive */
 @media (max-width: 768px) {
   body.project-page .project-diagram {
-    max-width: 90%;
+    max-width: 100%;
   }
 }
 
