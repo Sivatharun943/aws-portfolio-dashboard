@@ -1,107 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VPC Peering & Private Connectivity | Project Details</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/project.css">
-</head>
-<body class="project-page">
-    <!-- Hero Banner -->
-    <section class="project-hero">
-        <h1>VPC Peering & Private Connectivity</h1>
-        <p>Connected two VPCs securely using VPC Peering. Configured route tables, enabled private database access, and monitored traffic with VPC Flow Logs in CloudWatch.</p>
-    </section>
+<%- include('partials/header', {title: 'VPC Peering & Private Connectivity'}) %>
 
-    <div class="project-details">
-        <!-- Diagram -->
-        <div class="center">
-            <img src="/images/vpc-peering.png" alt="VPC Peering Diagram" class="project-diagram">
-        </div>
+<section class="project-hero">
+  <a href="/" class="project-back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  <h1>VPC Peering & Private Connectivity</h1>
+  <p>Connected two VPCs via VPC Peering, configured route tables, enabled private database access, and monitored traffic with VPC Flow Logs in CloudWatch.</p>
+  <div class="project-hero-tags">
+    <span>VPC Peering</span><span>Route Tables</span><span>VPC Flow Logs</span><span>CloudWatch</span><span>Private Connectivity</span>
+  </div>
+</section>
 
-        <!-- Project Overview -->
-        <div class="project-section">
-            <h3>Project Overview</h3>
-            <p>
-                This project demonstrates building <strong>secure private connectivity between two VPCs</strong> using 
-                <strong>VPC Peering</strong>, enabling applications in one VPC to access resources in another without internet exposure.
-            </p>
-            <ul>
-                <li>Created a <strong>VPC Peering connection</strong> between Lab VPC (10.0.0.0/16) and Shared VPC (10.5.0.0/16).</li>
-                <li>Updated <strong>route tables</strong> in both VPCs to route peered traffic.</li>
-                <li>Configured the <strong>inventory application</strong> to connect to the private database.</li>
-                <li>Verified <strong>private connectivity</strong> without internet gateways.</li>
-                <li>Analyzed <strong>VPC Flow Logs</strong> in CloudWatch to monitor traffic.</li>
-            </ul>
-        </div>
+<div class="project-details">
+  <div class="center">
+    <img src="/images/vpc-peering.png" alt="VPC Peering Architecture" class="project-diagram">
+  </div>
 
-        <!-- Architecture -->
-        <div class="project-section alt-bg">
-            <h3>Architecture Explanation</h3>
-            <p>VPC Peering enables private communication between VPCs:</p>
-            <ul>
-                <li><strong>Lab VPC (10.0.0.0/16)</strong> – Hosts the inventory application on EC2.</li>
-                <li><strong>Shared VPC (10.5.0.0/16)</strong> – Hosts the private database (no internet gateway).</li>
-                <li><strong>VPC Peering Connection (Lab-Peer)</strong> – Private link between the two VPCs.</li>
-                <li><strong>Lab Route Table</strong> – Routes 10.5.0.0/16 traffic through peering connection.</li>
-                <li><strong>Shared Route Table</strong> – Routes 10.0.0.0/16 traffic through peering connection.</li>
-                <li><strong>Security Groups</strong> – Allow port 3306 (MySQL) between peered VPCs.</li>
-                <li><strong>VPC Flow Logs</strong> – Capture and monitor all network traffic.</li>
-                <li><strong>CloudWatch</strong> – Visualize and analyze flow logs for troubleshooting.</li>
-            </ul>
-        </div>
+  <div class="project-section">
+    <h3>Project Overview</h3>
+    <p>This project demonstrates <strong>secure private connectivity between two VPCs</strong> using VPC Peering — enabling cross-VPC communication without internet exposure.</p>
+    <ul>
+      <li>Created a <strong>VPC Peering connection</strong> between Lab VPC (10.0.0.0/16) and Shared VPC (10.5.0.0/16).</li>
+      <li>Updated <strong>route tables</strong> in both VPCs for bidirectional traffic.</li>
+      <li>Configured the <strong>inventory application</strong> to connect to the private database.</li>
+      <li>Enabled and analyzed <strong>VPC Flow Logs</strong> in CloudWatch.</li>
+    </ul>
+  </div>
 
-        <!-- Implementation Steps -->
-        <div class="project-section">
-            <h3>Implementation Steps</h3>
-            <ul>
-                <li><strong>Step 1:</strong> Created VPC Peering connection between Lab VPC and Shared VPC.</li>
-                <li><strong>Step 2:</strong> Accepted the peering connection in Shared VPC.</li>
-                <li><strong>Step 3:</strong> Updated Lab VPC route table: 10.5.0.0/16 → Lab-Peer.</li>
-                <li><strong>Step 4:</strong> Updated Shared VPC route table: 10.0.0.0/16 → Lab-Peer.</li>
-                <li><strong>Step 5:</strong> Configured security groups to allow MySQL (port 3306) traffic.</li>
-                <li><strong>Step 6:</strong> Tested inventory app connection to private database.</li>
-                <li><strong>Step 7:</strong> Enabled VPC Flow Logs on both VPCs.</li>
-                <li><strong>Step 8:</strong> Analyzed flow logs in CloudWatch to verify traffic patterns.</li>
-            </ul>
-        </div>
-
-        <!-- Key Learnings -->
-        <div class="project-section alt-bg">
-            <h3>Key Learnings</h3>
-            <ul>
-                <li>Created <strong>VPC Peering connections</strong> for inter-VPC communication.</li>
-                <li>Configured <strong>route tables</strong> to enable peered traffic routing.</li>
-                <li>Understood <strong>CIDR block routing</strong> and route table priorities.</li>
-                <li>Enabled <strong>private connectivity</strong> without internet gateways or NAT.</li>
-                <li>Used <strong>VPC Flow Logs</strong> for network traffic visibility.</li>
-                <li>Analyzed logs in <strong>CloudWatch</strong> for troubleshooting.</li>
-                <li>Verified <strong>port-level connectivity</strong> (MySQL on 3306).</li>
-            </ul>
-        </div>
-
-        <!-- Best Practices -->
-        <div class="project-section">
-            <h3>Notes & Best Practices</h3>
-            <p>
-                VPC Peering is ideal for multi-VPC architectures:
-            </p>
-            <ul>
-                <li>Use <strong>VPC Peering</strong> for direct private connectivity between VPCs.</li>
-                <li>Consider <strong>AWS Transit Gateway</strong> for complex multi-VPC setups.</li>
-                <li>Always <strong>update route tables</strong> in both VPCs for bidirectional traffic.</li>
-                <li>Use <strong>security groups</strong> to restrict traffic to specific ports.</li>
-                <li>Enable <strong>VPC Flow Logs</strong> for monitoring and troubleshooting.</li>
-                <li>Avoid <strong>overlapping CIDR blocks</strong> between peered VPCs.</li>
-                <li>Use <strong>DNS resolution</strong> across peered VPCs for easier connectivity.</li>
-                <li>Monitor <strong>peering connection status</strong> regularly.</li>
-            </ul>
-        </div>
-
-        <div class="center">
-            <a href="/" class="btn">← Back to Portfolio</a>
-        </div>
+  <div class="project-section alt-bg">
+    <h3>Architecture Explanation</h3>
+    <div class="architecture-grid">
+      <div class="arch-component">
+        <h4>🔵 Lab VPC (10.0.0.0/16)</h4>
+        <ul>
+          <li>Hosts inventory <strong>EC2 application</strong></li>
+          <li>Route: 10.5.0.0/16 → Lab-Peer</li>
+        </ul>
+      </div>
+      <div class="arch-component">
+        <h4>🟣 Shared VPC (10.5.0.0/16)</h4>
+        <ul>
+          <li>Hosts <strong>private database</strong> (no IGW)</li>
+          <li>Route: 10.0.0.0/16 → Lab-Peer</li>
+        </ul>
+      </div>
+      <div class="arch-component">
+        <h4>🔗 Peering Connection</h4>
+        <ul>
+          <li><strong>VPC Peering (Lab-Peer)</strong> — Private link</li>
+          <li>SG allows MySQL port 3306</li>
+          <li><strong>Flow Logs</strong> — CloudWatch monitoring</li>
+        </ul>
+      </div>
     </div>
-</body>
-</html>
+  </div>
+
+  <div class="project-section">
+    <h3>Implementation Steps</h3>
+    <div class="steps-grid">
+      <div class="step-item"><div class="step-num">1</div><p>Created <strong>VPC Peering connection</strong> between Lab VPC and Shared VPC.</p></div>
+      <div class="step-item"><div class="step-num">2</div><p>Accepted the peering request and updated <strong>both route tables</strong>.</p></div>
+      <div class="step-item"><div class="step-num">3</div><p>Configured <strong>Security Groups</strong> to allow MySQL (port 3306) across VPCs.</p></div>
+      <div class="step-item"><div class="step-num">4</div><p>Tested <strong>inventory app to private database</strong> connectivity successfully.</p></div>
+      <div class="step-item"><div class="step-num">5</div><p>Enabled <strong>VPC Flow Logs</strong> and analyzed traffic patterns in CloudWatch.</p></div>
+    </div>
+  </div>
+
+  <div class="project-section alt-bg">
+    <h3>Key Learnings</h3>
+    <ul>
+      <li>Created <strong>VPC Peering connections</strong> for inter-VPC communication.</li>
+      <li>Configured <strong>route tables in both VPCs</strong> for bidirectional routing.</li>
+      <li>Enabled <strong>private connectivity</strong> without internet gateways or NAT.</li>
+      <li>Used <strong>VPC Flow Logs</strong> for network traffic visibility and troubleshooting.</li>
+      <li>Avoid <strong>overlapping CIDR blocks</strong> between peered VPCs.</li>
+    </ul>
+  </div>
+
+  <div class="center">
+    <a href="/" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

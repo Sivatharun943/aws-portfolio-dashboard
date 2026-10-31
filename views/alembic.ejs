@@ -1,82 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database Migration with Alembic & AWS RDS | Project Details</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/project.css"> <!-- Add project-specific styles -->
-</head>
-<body class="project-page">
-    <!-- Hero Banner -->
-    <section class="project-hero">
-        <h1>Cloud Database Migration with Alembic & AWS RDS</h1>
-        <p>Designed and deployed a PostgreSQL database on AWS RDS, and implemented schema versioning using Python’s Alembic and SQLAlchemy.</p>
-    </section>
+<%- include('partials/header', {title: 'Automated Database Migrations with Alembic & AWS RDS'}) %>
 
-    <div class="project-details">
-        <!-- Diagram -->
-        <div class="center">
-            <img src="/images/alembic.png" alt="Alembic AWS Architecture Diagram" class="project-diagram">
-        </div>
+<section class="project-hero">
+  <a href="/" class="project-back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  <h1>Automated Database Migrations with Alembic & AWS RDS</h1>
+  <p>PostgreSQL on AWS RDS with schema versioning using Python's Alembic and SQLAlchemy for reliable cloud-hosted database version control.</p>
+  <div class="project-hero-tags">
+    <span>AWS RDS</span><span>PostgreSQL</span><span>Alembic</span><span>SQLAlchemy</span><span>Python</span>
+  </div>
+</section>
 
-        <!-- Project Overview -->
-        <div class="project-section">
-            <h3>Project Overview</h3>
-            <p>
-                This project demonstrates how to set up and manage a <strong>PostgreSQL database</strong> on AWS RDS and use Alembic for incremental schema migrations:
-            </p>
-            <ul>
-                <li><strong>Database Setup</strong> – Launched a PostgreSQL database instance on AWS RDS using AWS CLI.</li>
-                <li><strong>Alembic Integration</strong> – Configured Alembic with SQLAlchemy and psycopg2 to connect Python to PostgreSQL.</li>
-                <li><strong>Migrations</strong> – Created and applied migration scripts to add and manage database tables.</li>
-            </ul>
-            <p>The goal was to implement reliable, version-controlled schema changes in a cloud-hosted database.</p>
-        </div>
+<div class="project-details">
+  <div class="center">
+    <img src="/images/alembic.png" alt="Alembic AWS RDS Architecture" class="project-diagram">
+  </div>
 
-        <!-- Architecture -->
-        <div class="project-section alt-bg">
-            <h3>Architecture Explanation</h3>
-            <p>The architecture includes the following components:</p>
-            <ul>
-                <li><strong>AWS RDS (PostgreSQL)</strong> – Cloud-hosted database instance.</li>
-                <li><strong>SQLAlchemy</strong> – Python ORM for defining schema objects.</li>
-                <li><strong>Alembic</strong> – Migration tool for version-controlling schema changes.</li>
-                <li><strong>psycopg2</strong> – Python driver enabling communication with PostgreSQL.</li>
-                <li><strong>psql Client</strong> – Used to verify and manually inspect tables created in RDS.</li>
-            </ul>
-        </div>
+  <div class="project-section">
+    <h3>Project Overview</h3>
+    <p>This project demonstrates managing a <strong>PostgreSQL database on AWS RDS</strong> with incremental schema migrations using Alembic — think of it as Git for your database schema.</p>
+    <ul>
+      <li>Launched a <strong>PostgreSQL RDS instance</strong> using AWS CLI.</li>
+      <li>Configured <strong>Alembic with SQLAlchemy and psycopg2</strong> to connect Python to RDS.</li>
+      <li>Created and applied <strong>migration scripts</strong> to add and manage database tables.</li>
+      <li>Verified migrations using the <strong>psql client</strong>.</li>
+    </ul>
+  </div>
 
-        <!-- Key Learnings -->
-        <div class="project-section">
-            <h3>Key Learnings</h3>
-            <ul>
-                <li>Learned how to launch and configure an AWS RDS PostgreSQL database using AWS CLI.</li>
-                <li>Understood how Alembic tracks migrations like Git commits for databases.</li>
-                <li>Created and applied multiple migration scripts (e.g., <code>account</code>, <code>account2</code> tables).</li>
-                <li>Verified migrations using the PostgreSQL <code>psql</code> client.</li>
-                <li>Gained experience in integrating Python tools with cloud databases.</li>
-            </ul>
-        </div>
-
-        <!-- Notes & Best Practices -->
-        <div class="project-section alt-bg">
-            <h3>Notes & Best Practices</h3>
-            <p>
-                While this project focused on demonstrating migrations in a learning environment, in production:
-            </p>
-            <ul>
-                <li>Credentials should be managed securely (e.g., AWS Secrets Manager).</li>
-                <li>Security groups should restrict PostgreSQL access to trusted IPs, not open to the world.</li>
-                <li>Separate environments (dev, staging, prod) should each maintain their own migration history.</li>
-                <li>Monitoring and backups should be enabled for RDS databases to ensure reliability.</li>
-            </ul>
-        </div>
-
-        <div class="center">
-            <a href="/" class="btn">⬅ Back to Portfolio</a>
-        </div>
+  <div class="project-section alt-bg">
+    <h3>Architecture Explanation</h3>
+    <div class="architecture-grid">
+      <div class="arch-component">
+        <h4>☁️ AWS Layer</h4>
+        <ul>
+          <li><strong>RDS PostgreSQL</strong> — Cloud-hosted database</li>
+          <li>Configured via <strong>AWS CLI</strong></li>
+          <li>Automated backups enabled</li>
+        </ul>
+      </div>
+      <div class="arch-component">
+        <h4>🐍 Python Stack</h4>
+        <ul>
+          <li><strong>SQLAlchemy</strong> — ORM for schema definitions</li>
+          <li><strong>Alembic</strong> — Migration version control</li>
+          <li><strong>psycopg2</strong> — PostgreSQL driver</li>
+        </ul>
+      </div>
+      <div class="arch-component">
+        <h4>🔍 Verification</h4>
+        <ul>
+          <li><strong>psql client</strong> — Inspect created tables</li>
+          <li>Alembic tracks migrations like Git commits</li>
+        </ul>
+      </div>
     </div>
-</body>
-</html>
+  </div>
 
+  <div class="project-section">
+    <h3>Key Learnings</h3>
+    <ul>
+      <li>Launched and configured an <strong>AWS RDS PostgreSQL</strong> database using AWS CLI.</li>
+      <li>Understood how Alembic tracks migrations like <strong>Git commits for databases</strong>.</li>
+      <li>Created and applied multiple migration scripts (e.g., <code>account</code>, <code>account2</code> tables).</li>
+      <li>Verified migrations using the <strong>psql client</strong>.</li>
+      <li>Gained experience integrating Python tools with cloud databases.</li>
+    </ul>
+  </div>
+
+  <div class="project-section alt-bg">
+    <h3>Notes & Best Practices</h3>
+    <ul>
+      <li>Manage credentials securely via <strong>AWS Secrets Manager</strong>.</li>
+      <li>Restrict security groups — <strong>PostgreSQL port 5432</strong> to trusted IPs only.</li>
+      <li>Maintain <strong>separate migration histories</strong> per environment (dev/staging/prod).</li>
+      <li>Enable <strong>automated backups and monitoring</strong> on RDS instances.</li>
+    </ul>
+  </div>
+
+  <div class="center">
+    <a href="/" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
