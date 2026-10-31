@@ -1,256 +1,407 @@
-/* Apply styles only to project pages */
+/* =============================================
+   PROJECT.CSS — Detail Page Styles
+   ============================================= */
+
 body.project-page {
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top left, #0f172a, #1e293b, #111827);
-  color: #e2e8f0;
+  font-family: 'Inter', 'Space Grotesk', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* Slim Hero Section (just title + short text) */
+/* --- Project Hero Banner --- */
 body.project-page .project-hero {
+  position: relative;
   text-align: center;
-  padding: 2rem 1rem;
-  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8));
+  padding: 5rem 2rem 3.5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(99,102,241,0.13) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 30%, rgba(244,114,182,0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 60% 80%, rgba(52,211,153,0.08) 0%, transparent 50%),
+    linear-gradient(160deg, #05071a 0%, #0a0d2e 100%);
+  border-bottom: 1px solid var(--border);
 }
+
+body.project-page .project-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--primary) 1px, transparent 1px),
+    linear-gradient(90deg, var(--primary) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.project-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.project-back-btn:hover { color: var(--accent); }
+.project-back-btn i { font-size: 0.8rem; }
 
 body.project-page .project-hero h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  color: #0ea5e9;
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin: 0 0 1rem;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fff 0%, var(--primary-light) 50%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 1;
 }
 
 body.project-page .project-hero p {
-  font-size: 1rem;
-  color: #cbd5e1;
-  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  z-index: 1;
+  line-height: 1.8;
 }
 
-/* Project Details Wrapper */
+.project-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.project-hero-tags span {
+  background: rgba(129,140,248,0.1);
+  border: 1px solid rgba(129,140,248,0.35);
+  color: var(--primary-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  letter-spacing: 0.3px;
+}
+
+/* --- Project Details Wrapper --- */
 body.project-page .project-details {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
 }
 
-/* Diagram - smaller + centered */
+/* --- Architecture Diagram --- */
 body.project-page .project-diagram {
-  max-width: 90%;
+  width: 100%;
+  max-width: 860px;
   height: auto;
-  margin: 1.5rem auto;
+  margin: 0 auto 2rem;
   display: block;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 40px rgba(129,140,248,0.12);
 }
 
-/* Section Cards */
+/* --- Section Cards --- */
 body.project-page .project-section {
-  background: #1e293b;
-  padding: 1.5rem;
+  background: var(--bg-card);
+  padding: 2rem;
   margin: 1.5rem 0;
-  border-radius: 10px;
-  border: 1px solid rgba(6, 182, 212, 0.2);
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.1);
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+body.project-page .project-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 body.project-page .project-section:hover {
-  border-color: rgba(6, 182, 212, 0.5);
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+  border-color: var(--border-hover);
+  box-shadow: 0 0 28px var(--glow);
+}
+
+body.project-page .project-section:hover::before { opacity: 1; }
+
+body.project-page .project-section.alt-bg {
+  background: linear-gradient(135deg, rgba(13,16,53,0.9), rgba(10,13,46,0.95));
 }
 
 body.project-page .project-section h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
-  color: #0ea5e9;
-  border-left: 3px solid #06b6d4;
-  padding-left: 0.5rem;
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-body.project-page .project-section p,
-body.project-page .project-section ul {
-  font-size: 0.95rem;
+body.project-page .project-section h3::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+body.project-page .project-section p {
   color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin: 0 0 0.8rem;
+}
+
+body.project-page .project-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 body.project-page .project-section li {
-  margin-bottom: 0.4rem;
+  padding-left: 1.6rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  color: #cbd5e1;
+  font-size: 0.93rem;
+  line-height: 1.7;
 }
 
-/* Button */
-body.project-page .btn {
-  display: inline-block;
-  margin: 2rem auto 0;
-  padding: 0.7rem 1.5rem;
-  background: transparent;
-  border: 2px solid #06b6d4;
-  color: #06b6d4;
-  text-decoration: none;
+body.project-page .project-section li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+body.project-page .project-section code {
+  background: rgba(129,140,248,0.12);
+  color: var(--primary-light);
+  padding: 0.15rem 0.5rem;
   border-radius: 5px;
-  font-size: 0.95rem;
+  font-size: 0.88em;
+  font-family: 'Courier New', monospace;
+  border: 1px solid rgba(129,140,248,0.2);
+}
+
+body.project-page .project-section strong {
+  color: var(--text-light);
   font-weight: 600;
-  transition: all 0.3s ease;
-  animation: buttonGlow 2s ease-in-out infinite;
 }
 
-body.project-page .btn:hover {
-  background: #06b6d4;
-  color: white;
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.8);
-}
-
-@keyframes buttonGlow {
-  0%, 100% {
-    box-shadow: 0 0 5px rgba(6, 182, 212, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  body.project-page .project-diagram {
-    max-width: 100%;
-  }
-}
-
-/* Enhanced WordPress Project Styles */
-
-/* Highlight Box */
+/* --- Highlight Box --- */
 body.project-page .highlight-box {
-  background: rgba(6, 182, 212, 0.1);
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  border-radius: 8px;
-  padding: 1rem;
+  background: rgba(129,140,248,0.07);
+  border: 1px solid rgba(129,140,248,0.25);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
   margin: 1rem 0;
 }
 
 body.project-page .highlight-box strong {
-  color: #0ea5e9;
+  color: var(--primary-light);
   display: block;
   margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
-/* Architecture Grid */
+/* --- Architecture Grid --- */
 body.project-page .architecture-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
   margin: 1rem 0;
 }
 
 body.project-page .arch-component {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(6, 182, 212, 0.2);
-  border-radius: 8px;
-  padding: 1rem;
+  background: rgba(5,7,26,0.6);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem;
+  transition: all 0.3s;
+}
+
+body.project-page .arch-component:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 14px var(--glow);
 }
 
 body.project-page .arch-component h4 {
-  color: #0ea5e9;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+  color: var(--primary-light);
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
-body.project-page .arch-component ul {
-  margin: 0;
-  padding-left: 1rem;
-}
+body.project-page .arch-component ul { margin: 0; }
+body.project-page .arch-component li { font-size: 0.88rem; }
 
-body.project-page .arch-component li {
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-}
-
-/* Troubleshooting Grid */
+/* --- Troubleshooting Grid --- */
 body.project-page .troubleshooting-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-body.project-page .trouble-item {
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  border-radius: 8px;
-  padding: 1rem;
-  transition: all 0.3s ease;
-}
-
-body.project-page .trouble-item:hover {
-  border-color: rgba(239, 68, 68, 0.5);
-  box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
-}
-
-body.project-page .trouble-item h4 {
-  color: #f87171;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-body.project-page .trouble-item p {
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-/* Improvements Grid */
-body.project-page .improvements-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
   margin: 1rem 0;
 }
 
+body.project-page .trouble-item {
+  background: rgba(244,114,182,0.06);
+  border: 1px solid rgba(244,114,182,0.2);
+  border-radius: 10px;
+  padding: 1.2rem;
+  transition: all 0.3s;
+}
+
+body.project-page .trouble-item:hover {
+  border-color: rgba(244,114,182,0.5);
+  box-shadow: 0 0 14px var(--glow-pink);
+}
+
+body.project-page .trouble-item h4 {
+  color: var(--accent2);
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+body.project-page .trouble-item p { font-size: 0.9rem; margin: 0; }
+
+/* --- Improvements Grid --- */
+body.project-page .improvements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
 body.project-page .improvement-category {
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  border-radius: 8px;
-  padding: 1rem;
+  background: rgba(52,211,153,0.06);
+  border: 1px solid rgba(52,211,153,0.2);
+  border-radius: 10px;
+  padding: 1.2rem;
+  transition: all 0.3s;
+}
+
+body.project-page .improvement-category:hover {
+  border-color: rgba(52,211,153,0.5);
+  box-shadow: 0 0 14px var(--glow-green);
 }
 
 body.project-page .improvement-category h4 {
-  color: #4ade80;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
-body.project-page .improvement-category ul {
-  margin: 0;
-  padding-left: 1rem;
+body.project-page .improvement-category ul { margin: 0; }
+body.project-page .improvement-category li { font-size: 0.88rem; }
+
+/* --- Steps Grid --- */
+body.project-page .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
-body.project-page .improvement-category li {
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
+body.project-page .step-item {
+  background: rgba(96,165,250,0.06);
+  border: 1px solid rgba(96,165,250,0.2);
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: all 0.3s;
 }
 
-/* Feedback Note */
-body.project-page .feedback-note {
-  background: rgba(168, 85, 247, 0.1);
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  border-radius: 8px;
-  padding: 1rem;
-  margin-top: 1rem;
+body.project-page .step-item:hover {
+  border-color: rgba(96,165,250,0.5);
+  box-shadow: 0 0 14px rgba(96,165,250,0.2);
+}
+
+body.project-page .step-num {
+  background: linear-gradient(135deg, var(--primary), var(--electric));
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.project-page .step-item p { margin: 0; font-size: 0.9rem; color: #cbd5e1; }
+body.project-page .step-item strong { color: var(--electric); }
+
+/* --- Center helper --- */
+body.project-page .center {
   text-align: center;
+  margin: 2rem 0;
 }
 
-body.project-page .feedback-note p {
-  margin: 0;
-  color: #c084fc;
-  font-style: italic;
+/* --- Back Button --- */
+body.project-page .btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  color: var(--primary-light);
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  margin-top: 1rem;
 }
 
-/* Responsive adjustments */
+body.project-page .btn-back:hover {
+  background: rgba(129,140,248,0.12);
+  box-shadow: 0 0 20px var(--glow);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* --- Responsive --- */
 @media (max-width: 768px) {
+  body.project-page .project-hero h1 { font-size: 1.8rem; }
+  body.project-page .project-details  { padding: 1.5rem 1rem 3rem; }
+  body.project-page .project-section  { padding: 1.5rem; }
   body.project-page .architecture-grid,
   body.project-page .troubleshooting-grid,
-  body.project-page .improvements-grid {
-    grid-template-columns: 1fr;
-  }
+  body.project-page .improvements-grid,
+  body.project-page .steps-grid { grid-template-columns: 1fr; }
 }

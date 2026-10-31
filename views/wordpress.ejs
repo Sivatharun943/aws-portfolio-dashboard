@@ -1,169 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WordPress on EC2 | Project Details</title>
-    <link rel="stylesheet" href="/css/base.css"> 
-     <link rel="stylesheet" href="/css/style.css">
-     <link rel="stylesheet" href="/css/project.css">
-    <!-- Add project-specific styles -->
-</head>
-<body class="project-page">
-    <!-- Hero Banner -->
-    <section class="project-hero">
-        <h1>Highly Available WordPress Architecture on AWS</h1>
-        <p>Production-grade WordPress deployment with Auto Scaling, Load Balancing, and comprehensive troubleshooting.</p>
-    </section>
+<%- include('partials/header', {title: 'Highly Available WordPress on AWS'}) %>
 
-    <div class="project-details">
-        <!-- Diagram -->
-        <div class="center">
-            <img src="/images/wordpress-ha-architecture.png.jpg" alt="Highly Available WordPress Architecture Diagram" class="project-diagram">
-        </div>
+<section class="project-hero">
+  <a href="/" class="project-back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  <h1>Highly Available WordPress on AWS</h1>
+  <p>Production-grade WordPress with Auto Scaling, ALB, Aurora MySQL, EFS, CloudFront, and ElastiCache — focused on real-world debugging and architectural decision-making.</p>
+  <div class="project-hero-tags">
+    <span>Auto Scaling</span><span>ALB</span><span>Aurora MySQL</span><span>EFS</span><span>CloudFront</span><span>ElastiCache</span><span>VPC</span>
+  </div>
+</section>
 
-        <!-- Project Overview -->
-        <div class="project-section">
-            <h3>Project Overview</h3>
-            <p>
-                This project demonstrates designing and validating a <strong>Highly Available WordPress architecture</strong> on AWS with real-world debugging and architectural decision-making.
-            </p>
-            <p>
-                What made this project valuable was the focus on <strong>troubleshooting production issues</strong> rather than just deployment - including ALB health check failures, Auto Scaling tuning, and end-to-end validation.
-            </p>
-            <div class="highlight-box">
-                <strong>Key Focus Areas:</strong>
-                <ul>
-                    <li>Real-world debugging and customer impact analysis</li>
-                    <li>Performance optimization and bottleneck identification</li>
-                    <li>Architectural decision-making for production workloads</li>
-                    <li>End-to-end flow validation and monitoring</li>
-                </ul>
-            </div>
-        </div>
+<div class="project-details">
+  <div class="center">
+    <img src="/images/wordpress.png" alt="Highly Available WordPress Architecture" class="project-diagram">
+  </div>
 
-        <!-- Architecture -->
-        <div class="project-section alt-bg">
-            <h3>Architecture Components</h3>
-            <p>This production-grade architecture includes:</p>
-            
-            <div class="architecture-grid">
-                <div class="arch-component">
-                    <h4>🌐 Network Layer</h4>
-                    <ul>
-                        <li><strong>Custom VPC</strong> with public/private subnets</li>
-                        <li><strong>Internet Gateway</strong> for public access</li>
-                        <li><strong>NAT Gateway</strong> for private subnet internet access</li>
-                        <li><strong>NACLs</strong> for subnet-level security</li>
-                    </ul>
-                </div>
-                
-                <div class="arch-component">
-                    <h4>⚖️ Load Balancing & Scaling</h4>
-                    <ul>
-                        <li><strong>Application Load Balancer</strong> with target groups</li>
-                        <li><strong>Health checks</strong> for instance monitoring</li>
-                        <li><strong>Auto Scaling Group</strong> for horizontal scalability</li>
-                        <li><strong>Scaling policies</strong> with tuned grace periods</li>
-                    </ul>
-                </div>
-                
-                <div class="arch-component">
-                    <h4>💾 Data Layer</h4>
-                    <ul>
-                        <li><strong>Amazon Aurora MySQL</strong> in private subnets</li>
-                        <li><strong>Amazon EFS</strong> for shared WordPress storage</li>
-                        <li><strong>ElastiCache (Redis/Valkey)</strong> for caching</li>
-                    </ul>
-                </div>
-                
-                <div class="arch-component">
-                    <h4>🚀 Performance & Delivery</h4>
-                    <ul>
-                        <li><strong>CloudFront CDN</strong> for low-latency delivery</li>
-                        <li><strong>ElastiCache</strong> for performance optimization</li>
-                        <li><strong>Connection pooling</strong> and optimization</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Troubleshooting & Debugging -->
-        <div class="project-section">
-            <h3>🔧 Real-World Troubleshooting</h3>
-            <p>The most valuable aspect of this project was debugging production-like issues:</p>
-            
-            <div class="troubleshooting-grid">
-                <div class="trouble-item">
-                    <h4>🎯 ALB Health Check Failures</h4>
-                    <p>Debugged target group health check failures, identified root causes, and implemented proper health check endpoints.</p>
-                </div>
-                
-                <div class="trouble-item">
-                    <h4>📈 Auto Scaling Optimization</h4>
-                    <p>Tuned health check grace periods and scaling policies to prevent premature termination and optimize scaling behavior.</p>
-                </div>
-                
-                <div class="trouble-item">
-                    <h4>🔍 Backend Bottleneck Analysis</h4>
-                    <p>Identified backend bottlenecks instead of blindly scaling EC2 instances - focused on database and caching optimization.</p>
-                </div>
-                
-                <div class="trouble-item">
-                    <h4>🌊 End-to-End Flow Validation</h4>
-                    <p>Validated complete request flow: CloudFront → ALB → EC2 → Aurora, ensuring each component worked correctly.</p>
-                </div>
-                
-                <div class="trouble-item">
-                    <h4>❄️ Cold Start & Connection Issues</h4>
-                    <p>Addressed real customer-facing issues like cold starts and connection draining during deployments.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Architectural Questions & Future Improvements -->
-        <div class="project-section alt-bg">
-            <h3>🤔 Architectural Questions & Future Improvements</h3>
-            <p>This project raised important questions for production optimization:</p>
-            
-            <div class="improvements-grid">
-                <div class="improvement-category">
-                    <h4>🚀 Scaling Optimization</h4>
-                    <ul>
-                        <li>How to further optimize Auto Scaling behavior for traffic patterns</li>
-                        <li>Implementing predictive scaling based on historical data</li>
-                        <li>Fine-tuning scaling metrics beyond CPU utilization</li>
-                    </ul>
-                </div>
-                
-                <div class="improvement-category">
-                    <h4>🔧 Operational Overhead</h4>
-                    <ul>
-                        <li>Reducing manual intervention through automation</li>
-                        <li>Implementing Infrastructure as Code for all components</li>
-                        <li>Automated backup and disaster recovery strategies</li>
-                    </ul>
-                </div>
-                
-                <div class="improvement-category">
-                    <h4>📊 Observability</h4>
-                    <ul>
-                        <li>Enhanced monitoring for real production traffic patterns</li>
-                        <li>Custom CloudWatch metrics and alarms</li>
-                        <li>Distributed tracing for end-to-end request visibility</li>
-                        <li>Performance analytics and user experience monitoring</li>
-                    </ul>
-                </div>
-            </div>
-            
-
-        </div>
-
-
-        <div class="center">
-            <a href="/" class="btn">⬅ Back to Portfolio</a>
-        </div>
+  <div class="project-section">
+    <h3>Project Overview</h3>
+    <p>This project demonstrates designing and validating a <strong>Highly Available WordPress architecture</strong> on AWS, with a focus on <strong>troubleshooting production issues</strong> rather than just deployment — including ALB health check failures, Auto Scaling tuning, and end-to-end validation.</p>
+    <div class="highlight-box">
+      <strong>Key Focus Areas</strong>
+      <ul>
+        <li>Real-world debugging and root-cause analysis</li>
+        <li>Performance optimization and bottleneck identification</li>
+        <li>Architectural decision-making for production workloads</li>
+        <li>End-to-end flow validation and monitoring</li>
+      </ul>
     </div>
-</body>
-</html>
+  </div>
 
+  <div class="project-section alt-bg">
+    <h3>Architecture Components</h3>
+    <div class="architecture-grid">
+      <div class="arch-component">
+        <h4>🌐 Network Layer</h4>
+        <ul>
+          <li><strong>Custom VPC</strong> with public/private subnets</li>
+          <li><strong>Internet Gateway</strong> for public access</li>
+          <li><strong>NAT Gateway</strong> for private subnet outbound</li>
+          <li><strong>NACLs</strong> for subnet-level security</li>
+        </ul>
+      </div>
+      <div class="arch-component">
+        <h4>⚖️ Load Balancing & Scaling</h4>
+        <ul>
+          <li><strong>Application Load Balancer</strong> with target groups</li>
+          <li><strong>Auto Scaling Group</strong> with tuned grace periods</li>
+          <li><strong>Health checks</strong> for instance monitoring</li>
+        </ul>
+      </div>
+      <div class="arch-component">
+        <h4>💾 Data Layer</h4>
+        <ul>
+          <li><strong>Aurora MySQL</strong> in private subnets</li>
+          <li><strong>Amazon EFS</strong> for shared WordPress files</li>
+          <li><strong>ElastiCache (Redis)</strong> for caching</li>
+        </ul>
+      </div>
+      <div class="arch-component">
+        <h4>🚀 Performance & Delivery</h4>
+        <ul>
+          <li><strong>CloudFront CDN</strong> for low-latency delivery</li>
+          <li><strong>Connection pooling</strong> and optimization</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <h3>Real-World Troubleshooting</h3>
+    <div class="troubleshooting-grid">
+      <div class="trouble-item">
+        <h4>🎯 ALB Health Check Failures</h4>
+        <p>Debugged target group health check failures, identified root causes, and implemented proper health check endpoints.</p>
+      </div>
+      <div class="trouble-item">
+        <h4>📈 Auto Scaling Optimization</h4>
+        <p>Tuned health check grace periods and scaling policies to prevent premature termination.</p>
+      </div>
+      <div class="trouble-item">
+        <h4>🔍 Backend Bottleneck Analysis</h4>
+        <p>Traced performance limits to the backend instead of adding more EC2 instances — focused on database and caching improvements.</p>
+      </div>
+      <div class="trouble-item">
+        <h4>🌊 End-to-End Flow Validation</h4>
+        <p>Validated the full request path: CloudFront → ALB → EC2 → Aurora, confirming each component worked correctly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-section alt-bg">
+    <h3>Notes & Best Practices</h3>
+    <ul>
+      <li>Always place <strong>Aurora and backend servers</strong> in private subnets.</li>
+      <li>Use <strong>EFS for shared WordPress files</strong> across multiple EC2 instances.</li>
+      <li>Tune <strong>Auto Scaling grace periods</strong> to allow WordPress to fully boot before health checks.</li>
+      <li>Monitor the <strong>full request path</strong> — don't scale blindly, find the actual bottleneck first.</li>
+      <li>Use <strong>ElastiCache</strong> to reduce database load for repeated queries.</li>
+    </ul>
+  </div>
+
+  <div class="center">
+    <a href="/" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

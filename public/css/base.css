@@ -1,11 +1,31 @@
 /* --- Base Styles & Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 :root {
-  --primary: #0ea5e9; /* sky blue */
-  --secondary: #1e40af; /* rich indigo */
-  --accent: #06b6d4; /* bright cyan */
-  --bg-dark: #0f172a;
-  --bg-card: #1e293b;
-  --text-light: #e2e8f0;
+  /* Core palette */
+  --primary:       #818cf8;   /* indigo-400 */
+  --primary-light: #a5b4fc;   /* indigo-300 */
+  --accent:        #34d399;   /* emerald-400 */
+  --accent2:       #f472b6;   /* pink-400 */
+  --electric:      #60a5fa;   /* blue-400 */
+  --gold:          #fbbf24;   /* amber-400 */
+
+  /* Backgrounds */
+  --bg-dark:       #05071a;
+  --bg-mid:        #0a0d2e;
+  --bg-card:       #0d1035;
+  --bg-card-hover: #121540;
+
+  /* Text */
+  --text-light:    #e2e8f0;
+  --text-muted:    #94a3b8;
+
+  /* Borders & glows */
+  --border:        rgba(129, 140, 248, 0.18);
+  --border-hover:  rgba(129, 140, 248, 0.6);
+  --glow:          rgba(129, 140, 248, 0.35);
+  --glow-green:    rgba(52, 211, 153, 0.35);
+  --glow-pink:     rgba(244, 114, 182, 0.35);
 }
 
 html {
@@ -13,23 +33,13 @@ html {
   scroll-padding-top: 80px;
 }
 
-/*body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-   background: linear-gradient(180deg, #f8f9fb 0%, #eef2f7 100%);
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-*/
-
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top left, #0f172a, #1e293b, #111827);
-  color: #e2e8f0; /* light gray-blue text */
-  line-height: 1.6;
+  font-family: 'Inter', 'Space Grotesk', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.7;
 }
-
 
 .container {
   max-width: 1100px;
@@ -38,28 +48,25 @@ body {
 }
 
 section {
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 section h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--primary);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
 }
 
 section h2 i {
   margin-right: 0.5rem;
-  color: var(--accent);
+  -webkit-text-fill-color: var(--accent);
 }
 
-
-
-/* Reduce spacing between About and AWS Projects sections */
-#about {
-  padding-bottom: 2rem; /* Reduced from default 4rem */
-}
-
-#aws {
-  padding-top: 2rem; /* Reduced from default 4rem */
-}
+#about  { padding-bottom: 2rem; }
+#aws    { padding-top: 3rem; }
